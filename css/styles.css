@@ -4239,7 +4239,7 @@ html.no-csstransitions .s-hero__content {
  *
  * ------------------------------------------------------------------- */
 .s-portfolio {
-    background-color: var(--color-bg);
+    background-color: var(--color-gray-17);
     padding-top: calc(7 * var(--space));
     padding-bottom: 0;
 }
