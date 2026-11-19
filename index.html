@@ -24,19 +24,25 @@
 </head>
 <body>
 
-  <a class="skip" href="#mixes">Skip to the mixes</a>
+  <a class="skip" href="#mixes" data-i18n="skip">Skip to the mixes</a>
 
   <header class="top">
-    <a class="top__mark" href="#hero" aria-label="Lautaro Volcan, back to top">
+    <a class="top__mark" href="#hero" aria-label="Lautaro Volcan, back to top" data-i18n-attr="aria-label:backTop">
       <span class="dot" aria-hidden="true"></span>
       <span>Lautaro Volcan</span>
     </a>
-    <nav class="top__nav" aria-label="Main">
-      <a href="#mixes">Mixes</a>
-      <a href="#videos">Videos</a>
-      <a href="#about">About</a>
-      <a href="#booking">Booking</a>
-    </nav>
+    <div class="top__right">
+      <nav class="top__nav" aria-label="Main" data-i18n-attr="aria-label:navLabel">
+        <a href="#mixes" data-i18n="navMixes">Mixes</a>
+        <a href="#videos" data-i18n="navVideos">Videos</a>
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#booking" data-i18n="navBooking">Booking</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:langLabel">
+        <button type="button" data-lang-set="en" aria-pressed="true" lang="en">EN</button>
+        <button type="button" data-lang-set="es" aria-pressed="false" lang="es">ES</button>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -46,7 +52,7 @@
       <picture class="hero__photo">
         <source type="image/webp" srcset="assets/img/hero-960.webp 960w, assets/img/hero-1920.webp 1920w" sizes="100vw">
         <img src="assets/img/hero-1920.jpg" srcset="assets/img/hero-960.jpg 960w, assets/img/hero-1920.jpg 1920w" sizes="100vw"
-             alt="Lautaro behind the decks at home, lit in red and amber, with a lava lamp glowing beside him" fetchpriority="high">
+             alt="Lautaro behind the decks at home, lit in red and amber, with a lava lamp glowing beside him" data-i18n-attr="alt:heroAlt" fetchpriority="high">
       </picture>
 
       <div class="hero__body">
@@ -55,10 +61,10 @@
           <span>Volcan</span>
         </h1>
         <div class="hero__side">
-          <p class="hero__lede">I shape minimal beats, deep grooves and dark ambiances into immersive sonic journeys.</p>
+          <p class="hero__lede" data-i18n="lede">I shape minimal beats, deep grooves and dark ambiances into immersive sonic journeys.</p>
           <div class="hero__actions">
-            <a class="btn btn--solid" href="#mixes">Listen to the mixes</a>
-            <a class="btn" href="#videos">Watch a set</a>
+            <a class="btn btn--solid" href="#mixes" data-i18n="ctaListen">Listen to the mixes</a>
+            <a class="btn" href="#videos" data-i18n="ctaWatch">Watch a set</a>
           </div>
         </div>
       </div>
@@ -69,10 +75,10 @@
       <div class="wrap">
         <div class="mixes__head">
           <h2 id="mixes-title" class="h2">Mixes</h2>
-          <p class="mixes__intro">Recorded sessions from the booth. Pick one from the crate and it loads on the deck.</p>
+          <p class="mixes__intro" data-i18n="mixesIntro">Recorded sessions from the booth. Pick one from the crate and it loads on the deck.</p>
         </div>
 
-        <div class="deck gloss" data-deck>
+        <div class="deck panel" data-deck>
           <div class="deck__platter-wrap">
             <div class="platter" data-platter>
               <div class="platter__label">
@@ -91,39 +97,39 @@
                 <span class="lcd__genre" data-genre></span>
               </div>
               <p class="lcd__title" data-title>Choose a mix</p>
-              <button class="lcd__time" type="button" data-time-toggle aria-label="Switch between elapsed and remaining time">
+              <button class="lcd__time" type="button" data-time-toggle aria-label="Switch between elapsed and remaining time" data-i18n-attr="aria-label:timeToggle">
                 <span class="lcd__time-mode" data-time-mode>Elapsed</span>
                 <span class="lcd__time-value" data-time>0:00:00</span>
               </button>
             </div>
 
-            <div class="wave" data-wave role="slider" tabindex="0" aria-label="Position in the mix"
+            <div class="wave" data-wave role="slider" tabindex="0" aria-label="Position in the mix" data-i18n-attr="aria-label:wavePos"
                  aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="0:00">
               <canvas data-wave-canvas></canvas>
               <span class="wave__hover" data-wave-hover aria-hidden="true"></span>
             </div>
 
             <div class="controls">
-              <button class="ctl" type="button" data-prev aria-label="Previous mix">
+              <button class="ctl" type="button" data-prev aria-label="Previous mix" data-i18n-attr="aria-label:prev">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg>
               </button>
               <button class="ctl ctl--play" type="button" data-play aria-label="Play">
                 <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>
                 <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
               </button>
-              <button class="ctl" type="button" data-next aria-label="Next mix">
+              <button class="ctl" type="button" data-next aria-label="Next mix" data-i18n-attr="aria-label:next">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg>
               </button>
 
               <label class="fader">
-                <span class="sr">Volume</span>
+                <span class="sr" data-i18n="volume">Volume</span>
                 <input type="range" min="0" max="100" value="80" data-volume>
               </label>
 
-              <a class="deck__sc" data-permalink href="https://soundcloud.com/lautarovolcan" target="_blank" rel="noopener">Open on SoundCloud</a>
+              <a class="deck__sc" data-permalink href="https://soundcloud.com/lautarovolcan" target="_blank" rel="noopener" data-i18n="openSc">Open on SoundCloud</a>
             </div>
 
-            <p class="deck__fallback" data-fallback hidden>Your browser blocked playback from the custom player. Use the SoundCloud player below instead.</p>
+            <p class="deck__fallback" data-fallback hidden data-i18n="fallback">Your browser blocked playback from the custom player. Use the SoundCloud player below instead.</p>
           </div>
 
           <!-- SoundCloud widgets live here. Hidden unless the browser blocks remote playback. -->
@@ -173,7 +179,7 @@
           </li>
         </ol>
 
-        <p class="credit">Audio streamed from <a href="https://soundcloud.com/lautarovolcan" target="_blank" rel="noopener">SoundCloud</a>.</p>
+        <p class="credit"><span data-i18n="credit">Audio streamed from</span> <a href="https://soundcloud.com/lautarovolcan" target="_blank" rel="noopener">SoundCloud</a>.</p>
       </div>
     </section>
 
@@ -182,11 +188,11 @@
       <div class="wrap">
         <div class="mixes__head">
           <h2 id="videos-title" class="h2">Videos</h2>
-          <p class="mixes__intro">Two sets on camera. Press play on a deck to watch it.</p>
+          <p class="mixes__intro" data-i18n="videosIntro">Two sets on camera. Press play on a deck to watch it.</p>
         </div>
 
         <div class="vdecks">
-          <article class="vdeck gloss vdeck--1" data-vdeck data-video-id="7vkOglBB7mk" data-video-start="1500" data-video-title="Live session #1">
+          <article class="vdeck panel vdeck--1" data-vdeck data-video-id="7vkOglBB7mk" data-video-start="1500" data-video-title="Live session #1">
             <div class="vdeck__screen" data-vscreen>
               <button class="vdeck__cover" type="button" data-video-play aria-label="Play Live session #1">
                 <img src="https://i.ytimg.com/vi/7vkOglBB7mk/maxresdefault.jpg" alt="" loading="lazy" data-yt-thumb="7vkOglBB7mk">
@@ -204,12 +210,12 @@
               </button>
               <div class="vdeck__meta">
                 <h3 class="vdeck__title">Live session #1</h3>
-                <a class="vdeck__yt" href="https://www.youtube.com/watch?v=7vkOglBB7mk&t=1500s" target="_blank" rel="noopener">Watch on YouTube</a>
+                <a class="vdeck__yt" href="https://www.youtube.com/watch?v=7vkOglBB7mk&t=1500s" target="_blank" rel="noopener" data-i18n="watchYt">Watch on YouTube</a>
               </div>
             </div>
           </article>
 
-          <div class="mixer gloss" aria-hidden="true">
+          <div class="mixer panel" aria-hidden="true">
             <div class="mixer__ch mixer__ch--1">
               <span class="meter"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
               <span class="vfader"><span class="vfader__cap"></span></span>
@@ -221,7 +227,7 @@
             <div class="xfader"><span class="xfader__cap"></span></div>
           </div>
 
-          <article class="vdeck gloss vdeck--2" data-vdeck data-video-id="L5LTvuj2zEo" data-video-start="0" data-video-title="Live session #2">
+          <article class="vdeck panel vdeck--2" data-vdeck data-video-id="L5LTvuj2zEo" data-video-start="0" data-video-title="Live session #2">
             <div class="vdeck__screen" data-vscreen>
               <button class="vdeck__cover" type="button" data-video-play aria-label="Play Live session #2">
                 <img src="https://i.ytimg.com/vi/L5LTvuj2zEo/maxresdefault.jpg" alt="" loading="lazy" data-yt-thumb="L5LTvuj2zEo">
@@ -239,7 +245,7 @@
               </button>
               <div class="vdeck__meta">
                 <h3 class="vdeck__title">Live session #2</h3>
-                <a class="vdeck__yt" href="https://www.youtube.com/watch?v=L5LTvuj2zEo" target="_blank" rel="noopener">Watch on YouTube</a>
+                <a class="vdeck__yt" href="https://www.youtube.com/watch?v=L5LTvuj2zEo" target="_blank" rel="noopener" data-i18n="watchYt">Watch on YouTube</a>
               </div>
             </div>
           </article>
@@ -254,16 +260,16 @@
           <picture>
             <source type="image/webp" srcset="assets/img/about-960.webp 960w, assets/img/about-1920.webp 1920w" sizes="(min-width: 900px) 45vw, 100vw">
             <img src="assets/img/about-960.jpg" srcset="assets/img/about-960.jpg 960w, assets/img/about-1920.jpg 1920w" sizes="(min-width: 900px) 45vw, 100vw"
-                 alt="Lautaro mixing on two decks in a red-lit room, seen from below" loading="lazy" width="1920" height="1080">
+                 alt="Lautaro mixing on two decks in a red-lit room, seen from below" data-i18n-attr="alt:aboutAlt" loading="lazy" width="1920" height="1080">
           </picture>
         </figure>
 
         <div class="about__text">
-          <h2 id="about-title" class="h2">I'm Lautaro Ferrandi, and I play as Lautaro Volcan: an Argentine-Spanish DJ based in Barcelona.</h2>
-          <p>I'm drawn to tech house, house, techno, nu disco and ambient, and I focus on building atmospheres that connect with the room. I pick tracks for their groove, their vocals and their rhythmic patterns, and dig into what makes each one work to build sets people share together.</p>
-          <p>I like sets that move across styles. I've played clubs and events in different countries, reading each crowd and each venue as it comes.</p>
-          <p>Ambient is where the introspective side comes in: it lets me fold quieter, emotional passages into a mix without losing the floor.</p>
-          <ul class="tags" aria-label="Genres">
+          <h2 id="about-title" class="h2" data-i18n="aboutTitle">I'm Lautaro Ferrandi, and I play as Lautaro Volcan: an Argentine-Spanish DJ based in Barcelona.</h2>
+          <p data-i18n="about1">I'm drawn to tech house, house, techno, nu disco and ambient, and I focus on building atmospheres that connect with the room. I pick tracks for their groove, their vocals and their rhythmic patterns, and dig into what makes each one work to build sets people share together.</p>
+          <p data-i18n="about2">I like sets that move across styles. I've played clubs and events in different countries, reading each crowd and each venue as it comes.</p>
+          <p data-i18n="about3">Ambient is where the introspective side comes in: it lets me fold quieter, emotional passages into a mix without losing the floor.</p>
+          <ul class="tags" aria-label="Genres" data-i18n-attr="aria-label:genres">
             <li>Tech house</li><li>House</li><li>Techno</li><li>Nu disco</li><li>Ambient</li>
           </ul>
         </div>
@@ -273,11 +279,11 @@
     <!-- Booking -->
     <section id="booking" class="booking" aria-labelledby="booking-title">
       <div class="wrap">
-        <h2 id="booking-title" class="h2">Bookings, collaborations and press</h2>
+        <h2 id="booking-title" class="h2" data-i18n="bookingTitle">Bookings, collaborations and press</h2>
         <a class="booking__mail" href="mailto:lautaroferrandi@gmail.com">lautaroferrandi@gmail.com</a>
         <div class="presskit">
-          <a class="btn btn--gloss" href="assets/presskit/LautaroVolcan-PressKit-EN.pdf" download>Download press kit (EN)</a>
-          <a class="btn" href="assets/presskit/LautaroVolcan-PressKit-ES.pdf" download hreflang="es" lang="es">Descargar press kit (ES)</a>
+          <a class="btn btn--solid" href="assets/presskit/LautaroVolcan-PressKit-EN.pdf" download data-i18n="pkMain" data-i18n-attr="href:pkMainHref">Download press kit</a>
+          <a class="btn" href="assets/presskit/LautaroVolcan-PressKit-ES.pdf" download data-i18n="pkAlt" data-i18n-attr="href:pkAltHref;lang:pkAltLang" lang="es">Press kit en español</a>
         </div>
         <ul class="links">
           <li><a href="https://www.instagram.com/lautarovolcan/" target="_blank" rel="noopener">Instagram</a></li>
@@ -291,8 +297,8 @@
 
   <footer class="foot">
     <div class="wrap foot__row">
-      <p>© <span data-year>2026</span> Lautaro Volcan. All rights reserved.</p>
-      <p>Designed and built by <a href="https://www.lautaroferrandi.com/" target="_blank" rel="noopener">Lautaro Ferrandi</a>.</p>
+      <p>© <span data-year>2026</span> Lautaro Volcan. <span data-i18n="rights">All rights reserved.</span></p>
+      <p><span data-i18n="builtBy">Designed and built by</span> <a href="https://www.lautaroferrandi.com/" target="_blank" rel="noopener">Lautaro Ferrandi</a>.</p>
     </div>
   </footer>
 

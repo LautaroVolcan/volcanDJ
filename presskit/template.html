@@ -13,8 +13,6 @@
   :root {
     --oxblood: #1C0A0C; --wine: #36121A; --volcan: #B23730; --amber: #F0A04B; --text: #F3DDD4; --muted: #C7A49A;
     --line: rgba(243,221,212,.18);
-    --chrome: linear-gradient(145deg, #FFF3EE 0%, #A48C86 12%, #2E1B1C 30%, #7A625D 47%, #FBEAE3 58%, #3B2627 74%, #C6AFA9 90%, #FFF3EE 100%);
-    --lacquer: linear-gradient(165deg, #3E151C 0%, #1E0A0D 48%, #0F0506 100%);
     --display: "Unbounded", sans-serif;
     --sans: "Heros", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
@@ -42,16 +40,11 @@
   .sub { font: 700 14pt/1.2 var(--sans); margin: 0 0 5mm; }
   .label { font: 400 10pt/1.3 var(--sans); color: var(--muted); margin: 0 0 3mm; }
 
-  .gloss {
-    position: relative; border: .6mm solid transparent; border-radius: 6mm;
-    background: var(--lacquer) padding-box, var(--chrome) border-box;
-    box-shadow: inset 0 .3mm 0 rgba(255,240,234,.5), 0 6mm 12mm -6mm rgba(0,0,0,.9);
+  .panel {
+    position: relative; border-radius: 6mm;
+    background: linear-gradient(160deg, #4A1A22, var(--wine) 45%, #2A0E13);
   }
-  .gloss::before {
-    content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
-    background: radial-gradient(90% 60% at 18% 0%, rgba(255,236,228,.18), transparent 60%), linear-gradient(115deg, rgba(255,236,228,.09) 0 18%, transparent 34%);
-  }
-  .bezel { border: .6mm solid transparent; background: #0C0304 padding-box, var(--chrome) border-box; border-radius: 5mm; overflow: hidden; }
+  .bezel { background: #0C0304; border-radius: 5mm; overflow: hidden; }
   .bezel img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
   /* ---- Cover ---- */
@@ -111,7 +104,7 @@
   <div class="about__grid">
     <div>
       <p class="label">{{short_label}}</p>
-      <div class="short gloss"><p>{{short}}</p></div>
+      <div class="short panel"><p>{{short}}</p></div>
     </div>
     <div class="long">
       <p class="label">{{long_label}}</p>
@@ -138,7 +131,7 @@
         <li><span>{{website}}</span><a href="{{site}}">{{site_short}}</a></li>
       </ul>
     </div>
-    <a class="site gloss" href="{{site}}"><span class="qr">{{site_qr}}</span><p>{{website}}</p></a>
+    <a class="site panel" href="{{site}}"><span class="qr">{{site_qr}}</span><p>{{website}}</p></a>
   </div>
   <p class="sub">{{photos}}</p>
   <div class="photos">

@@ -11,6 +11,131 @@
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   let player = null; // set once the deck is wired up
 
+  /* ---------------- Language (English is the default) ---------------- */
+
+  const I18N = {
+    en: {
+      title: "Lautaro Volcan — DJ",
+      description: "Lautaro Volcan is an Argentine-Spanish DJ based in Barcelona playing tech house, house, techno, nu disco and ambient. Listen to his mixes and get in touch for bookings.",
+      skip: "Skip to the mixes",
+      backTop: "Lautaro Volcan, back to top",
+      navLabel: "Main",
+      navMixes: "Mixes", navVideos: "Videos", navAbout: "About", navBooking: "Booking",
+      langLabel: "Language",
+      heroAlt: "Lautaro behind the decks at home, lit in red and amber, with a lava lamp glowing beside him",
+      lede: "I shape minimal beats, deep grooves and dark ambiances into immersive sonic journeys.",
+      ctaListen: "Listen to the mixes",
+      ctaWatch: "Watch a set",
+      mixesIntro: "Recorded sessions from the booth. Pick one from the crate and it loads on the deck.",
+      timeToggle: "Switch between elapsed and remaining time",
+      wavePos: "Position in the mix",
+      prev: "Previous mix", next: "Next mix", volume: "Volume",
+      openSc: "Open on SoundCloud",
+      fallback: "Your browser blocked playback from the custom player. Use the SoundCloud player below instead.",
+      credit: "Audio streamed from",
+      videosIntro: "Two sets on camera. Press play on a deck to watch it.",
+      watchYt: "Watch on YouTube",
+      aboutAlt: "Lautaro mixing on two decks in a red-lit room, seen from below",
+      aboutTitle: "I'm Lautaro Ferrandi, and I play as Lautaro Volcan: an Argentine-Spanish DJ based in Barcelona.",
+      about1: "I'm drawn to tech house, house, techno, nu disco and ambient, and I focus on building atmospheres that connect with the room. I pick tracks for their groove, their vocals and their rhythmic patterns, and dig into what makes each one work to build sets people share together.",
+      about2: "I like sets that move across styles. I've played clubs and events in different countries, reading each crowd and each venue as it comes.",
+      about3: "Ambient is where the introspective side comes in: it lets me fold quieter, emotional passages into a mix without losing the floor.",
+      genres: "Genres",
+      bookingTitle: "Bookings, collaborations and press",
+      pkMain: "Download press kit", pkMainHref: "assets/presskit/LautaroVolcan-PressKit-EN.pdf",
+      pkAlt: "Press kit en español", pkAltHref: "assets/presskit/LautaroVolcan-PressKit-ES.pdf", pkAltLang: "es",
+      rights: "All rights reserved.",
+      builtBy: "Designed and built by",
+      // player and video decks
+      st_ready: "Ready", st_loading: "Loading", st_playing: "Playing", st_paused: "Paused", st_offline: "Offline",
+      chooseMix: "Choose a mix", unreachable: "SoundCloud is unreachable",
+      elapsed: "Elapsed", remaining: "Remaining",
+      of: (a, b) => `${a} of ${b}`,
+      play: "Play", pause: "Pause",
+      openTrack: (x) => `Open ${x} on SoundCloud`,
+      playVideo: (x) => `Play ${x}`, stopVideo: (x) => `Stop ${x}`,
+    },
+    es: {
+      title: "Lautaro Volcan — DJ",
+      description: "Lautaro Volcan es un DJ argentino-español con base en Barcelona: tech house, house, techno, nu disco y ambient. Escucha sus mixes y escríbele para contrataciones.",
+      skip: "Saltar a los mixes",
+      backTop: "Lautaro Volcan, volver arriba",
+      navLabel: "Principal",
+      navMixes: "Mixes", navVideos: "Videos", navAbout: "Sobre mí", navBooking: "Contacto",
+      langLabel: "Idioma",
+      heroAlt: "Lautaro en los platos en su casa, con luz roja y ámbar y una lámpara de lava encendida a su lado",
+      lede: "Doy forma a beats minimalistas, grooves profundos y atmósferas oscuras para crear viajes sonoros envolventes.",
+      ctaListen: "Escuchar los mixes",
+      ctaWatch: "Ver un set",
+      mixesIntro: "Sesiones grabadas desde la cabina. Elige una de la lista y se carga en el deck.",
+      timeToggle: "Cambiar entre tiempo transcurrido y restante",
+      wavePos: "Posición en el mix",
+      prev: "Mix anterior", next: "Mix siguiente", volume: "Volumen",
+      openSc: "Abrir en SoundCloud",
+      fallback: "Tu navegador bloqueó la reproducción desde este reproductor. Usa el reproductor de SoundCloud que aparece debajo.",
+      credit: "Audio en streaming desde",
+      videosIntro: "Dos sets en cámara. Pulsa play en un deck para verlo.",
+      watchYt: "Ver en YouTube",
+      aboutAlt: "Lautaro mezclando en dos platos en una habitación con luz roja, visto desde abajo",
+      aboutTitle: "Soy Lautaro Ferrandi y toco como Lautaro Volcan: DJ argentino-español con base en Barcelona.",
+      about1: "Me apasionan el tech house, el house, el techno, el nu disco y el ambient, y me dedico a crear atmósferas que conecten con el público. Elijo los tracks por su groove, sus voces y sus patrones rítmicos, y busco qué hace funcionar a cada uno para construir sets que se disfruten en conjunto.",
+      about2: "Me gustan los sets que cruzan estilos. He tocado en clubes y eventos de distintos países, leyendo cada público y cada espacio.",
+      about3: "El ambient es mi lado más introspectivo: me permite sumar pasajes más tranquilos y emotivos a una mezcla sin perder la pista.",
+      genres: "Géneros",
+      bookingTitle: "Contrataciones, colaboraciones y prensa",
+      pkMain: "Descargar press kit", pkMainHref: "assets/presskit/LautaroVolcan-PressKit-ES.pdf",
+      pkAlt: "Press kit in English", pkAltHref: "assets/presskit/LautaroVolcan-PressKit-EN.pdf", pkAltLang: "en",
+      rights: "Todos los derechos reservados.",
+      builtBy: "Diseñado y desarrollado por",
+      st_ready: "Listo", st_loading: "Cargando", st_playing: "Sonando", st_paused: "En pausa", st_offline: "Sin conexión",
+      chooseMix: "Elige un mix", unreachable: "No se puede conectar con SoundCloud",
+      elapsed: "Transcurrido", remaining: "Restante",
+      of: (a, b) => `${a} de ${b}`,
+      play: "Reproducir", pause: "Pausar",
+      openTrack: (x) => `Abrir ${x} en SoundCloud`,
+      playVideo: (x) => `Reproducir ${x}`, stopVideo: (x) => `Detener ${x}`,
+    },
+  };
+
+  let lang = "en";
+  const langListeners = [];
+  const tr = (key, ...args) => {
+    const v = I18N[lang][key] ?? I18N.en[key];
+    return typeof v === "function" ? v(...args) : v;
+  };
+
+  function setLang(next, { persist = true } = {}) {
+    lang = I18N[next] ? next : "en";
+    document.documentElement.lang = lang;
+    document.title = tr("title");
+    $('meta[name="description"]')?.setAttribute("content", tr("description"));
+    $$("[data-i18n]").forEach((el) => (el.textContent = tr(el.dataset.i18n)));
+    $$("[data-i18n-attr]").forEach((el) =>
+      el.dataset.i18nAttr.split(";").forEach((pair) => {
+        const [attr, key] = pair.split(":");
+        el.setAttribute(attr, tr(key));
+      })
+    );
+    $$("[data-lang-set]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.langSet === lang)));
+    if (persist) {
+      try { localStorage.setItem("lang", lang); } catch (_) {}
+      const url = new URL(location.href);
+      if (lang === "en") url.searchParams.delete("lang"); else url.searchParams.set("lang", lang);
+      history.replaceState(null, "", url);
+    }
+    langListeners.forEach((fn) => fn());
+  }
+
+  $$("[data-lang-set]").forEach((b) => b.addEventListener("click", () => setLang(b.dataset.langSet)));
+
+  // ?lang=es in the link wins, then the visitor's last choice; otherwise English.
+  const initialLang = (() => {
+    const q = new URLSearchParams(location.search).get("lang");
+    if (q && I18N[q]) return q;
+    try { const saved = localStorage.getItem("lang"); if (saved && I18N[saved]) return saved; } catch (_) {}
+    return "en";
+  })();
+
   /* ---------------- Small page bits ---------------- */
 
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
@@ -27,7 +152,7 @@
       if (d === except) return;
       $("iframe", d)?.remove();
       d.classList.remove("is-live");
-      $$("[data-video-play]", d).forEach((b) => b.setAttribute("aria-label", `Play ${d.dataset.videoTitle}`));
+      $$("[data-video-play]", d).forEach((b) => b.setAttribute("aria-label", tr("playVideo", d.dataset.videoTitle)));
     });
   }
   function startVideo(d) {
@@ -41,8 +166,15 @@
     iframe.allowFullscreen = true;
     $("[data-vscreen]", d).appendChild(iframe);
     d.classList.add("is-live");
-    $$("[data-video-play]", d).forEach((b) => b.setAttribute("aria-label", `Stop ${title}`));
+    $$("[data-video-play]", d).forEach((b) => b.setAttribute("aria-label", tr("stopVideo", title)));
   }
+  langListeners.push(() =>
+    vdecks.forEach((d) =>
+      $$("[data-video-play]", d).forEach((b) =>
+        b.setAttribute("aria-label", tr(d.classList.contains("is-live") ? "stopVideo" : "playVideo", d.dataset.videoTitle))
+      )
+    )
+  );
   vdecks.forEach((d) =>
     $$("[data-video-play]", d).forEach((btn) =>
       btn.addEventListener("click", () => (d.classList.contains("is-live") ? stopVideos() : startVideo(d)))
@@ -122,7 +254,9 @@
     return h ? `${h}:${String(m).padStart(2, "0")}:${ss}` : `${m}:${ss}`;
   };
 
-  const setState = (text) => (ui.state.textContent = text);
+  let stateKey = "ready";
+  let titleKey = "chooseMix"; // used while no track title is shown
+  const setState = (key) => { stateKey = key; ui.state.textContent = tr(`st_${key}`); };
 
   function loadApi() {
     if (window.SC?.Widget) return Promise.resolve();
@@ -231,10 +365,10 @@
     if (!cur) return;
     const ms = showRemaining && cur.duration ? cur.duration - cur.pos : cur.pos;
     ui.time.textContent = (showRemaining && cur.duration ? "-" : "") + fmt(ms);
-    ui.timeMode.textContent = showRemaining ? "Remaining" : "Elapsed";
+    ui.timeMode.textContent = tr(showRemaining ? "remaining" : "elapsed");
     const pct = cur.duration ? Math.round((cur.pos / cur.duration) * 100) : 0;
     ui.wave.setAttribute("aria-valuenow", pct);
-    ui.wave.setAttribute("aria-valuetext", `${fmt(cur.pos)} of ${fmt(cur.duration)}`);
+    ui.wave.setAttribute("aria-valuetext", tr("of", fmt(cur.pos), fmt(cur.duration)));
   }
 
   function renderTrack() {
@@ -243,7 +377,7 @@
     ui.title.textContent = cur.title;
     ui.genre.textContent = cur.genre;
     ui.permalink.href = cur.url;
-    ui.permalink.setAttribute("aria-label", `Open ${cur.title} on SoundCloud`);
+    ui.permalink.setAttribute("aria-label", tr("openTrack", cur.title));
     tracks.forEach((t) => t.btn.setAttribute("aria-current", t === cur ? "true" : "false"));
     if (cur.art) {
       ui.art.src = cur.art;
@@ -261,8 +395,8 @@
     playing = on;
     deck.classList.toggle("is-playing", on);
     deck.classList.remove("is-loading");
-    ui.play.setAttribute("aria-label", on ? "Pause" : "Play");
-    setState(on ? "Playing" : cur?.pos ? "Paused" : "Ready");
+    ui.play.setAttribute("aria-label", tr(on ? "pause" : "play"));
+    setState(on ? "playing" : cur?.pos ? "paused" : "ready");
     if (on) {
       clearTimeout(fallbackTimer);
       ui.fallback.hidden = true;
@@ -273,7 +407,7 @@
     deck.classList.add("show-engine");
     ui.fallback.hidden = false;
     deck.classList.remove("is-loading");
-    setState("Ready");
+    setState("ready");
   }
 
   /* ---- engine: one hidden SoundCloud widget per mix ---- */
@@ -284,8 +418,9 @@
     return loadApi()
       .then(() => tracks.forEach(createWidget))
       .catch(() => {
-        setState("Offline");
-        ui.title.textContent = "SoundCloud is unreachable";
+        setState("offline");
+        titleKey = "unreachable";
+        ui.title.textContent = tr(titleKey);
       });
   }
 
@@ -376,7 +511,7 @@
     if (!cur.ready) {
       pendingPlay = cur;
       deck.classList.add("is-loading");
-      setState("Loading");
+      setState("loading");
       return;
     }
     cur.widget.play();
@@ -468,7 +603,16 @@
 
   if (reducedMotion) ui.platter.style.animation = "none";
 
-  // Let the video dialog pause the music.
+  // Let the video decks pause the music.
   player = { pause };
+
+  // Re-label the player when the language changes.
+  langListeners.push(() => {
+    setState(stateKey);
+    ui.play.setAttribute("aria-label", tr(playing ? "pause" : "play"));
+    if (stateKey === "offline") ui.title.textContent = tr(titleKey);
+    renderTrack();
+  });
   select(0, false);
+  setLang(initialLang, { persist: false });
 })();
