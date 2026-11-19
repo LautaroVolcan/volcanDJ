@@ -206,7 +206,6 @@
             <div class="vdeck__base">
               <button class="vdeck__play" type="button" data-video-play aria-label="Play Live session #1">
                 <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>
-                <svg class="i-stop" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h12v12H6z"/></svg>
               </button>
               <div class="vdeck__meta">
                 <h3 class="vdeck__title">Live session #1</h3>
@@ -241,7 +240,6 @@
             <div class="vdeck__base">
               <button class="vdeck__play" type="button" data-video-play aria-label="Play Live session #2">
                 <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>
-                <svg class="i-stop" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h12v12H6z"/></svg>
               </button>
               <div class="vdeck__meta">
                 <h3 class="vdeck__title">Live session #2</h3>
@@ -302,6 +300,46 @@
     </div>
   </footer>
 
+
+  <!-- Video player: opens over the page. YouTube runs underneath with its own controls hidden. -->
+  <dialog class="vplayer" data-vplayer aria-labelledby="vplayer-title">
+    <div class="vplayer__panel panel" data-vp-panel>
+      <div class="vplayer__top">
+        <p class="vplayer__title" id="vplayer-title">
+          <span class="vdeck__num" data-vp-num aria-hidden="true">1</span>
+          <span data-vp-title>Live session #1</span>
+        </p>
+        <button class="vplayer__close" type="button" data-vp-close data-i18n="close">Close</button>
+      </div>
+
+      <div class="vplayer__screen" data-vp-screen>
+        <div class="vplayer__frame"><div data-vp-frame></div></div>
+        <button class="vplayer__hit" type="button" data-vp-toggle aria-label="Play" tabindex="-1"></button>
+        <span class="vplayer__big" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span>
+        <p class="vplayer__msg" data-vp-msg hidden></p>
+      </div>
+
+      <div class="vplayer__bar">
+        <button class="ctl ctl--play" type="button" data-vp-play aria-label="Play">
+          <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>
+          <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+        </button>
+        <p class="vplayer__time"><span data-vp-cur>0:00</span><span class="vplayer__sep">/</span><span data-vp-dur>0:00</span></p>
+        <div class="wave vplayer__wave" data-vp-wave role="slider" tabindex="0" aria-label="Position in the video" data-i18n-attr="aria-label:videoPos"
+             aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <canvas data-vp-canvas></canvas>
+          <span class="wave__hover" data-vp-hover aria-hidden="true"></span>
+        </div>
+        <label class="fader">
+          <span class="sr" data-i18n="volume">Volume</span>
+          <input type="range" min="0" max="100" value="80" data-vp-vol>
+        </label>
+        <button class="ctl" type="button" data-vp-fs aria-label="Full screen" data-i18n-attr="aria-label:fullscreen">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v2H6v4H4zM14 4h6v6h-2V6h-4zM4 14h2v4h4v2H4zM18 14h2v6h-6v-2h4z"/></svg>
+        </button>
+      </div>
+    </div>
+  </dialog>
 
   <script src="assets/js/main.js" defer></script>
 </body>

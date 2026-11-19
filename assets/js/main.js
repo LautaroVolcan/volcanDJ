@@ -53,7 +53,10 @@
       of: (a, b) => `${a} of ${b}`,
       play: "Play", pause: "Pause",
       openTrack: (x) => `Open ${x} on SoundCloud`,
-      playVideo: (x) => `Play ${x}`, stopVideo: (x) => `Stop ${x}`,
+      playVideo: (x) => `Play ${x}`,
+      close: "Close", fullscreen: "Full screen", exitFullscreen: "Exit full screen",
+      videoPos: "Position in the video",
+      videoError: "This video can't play here.",
     },
     es: {
       title: "Lautaro Volcan — DJ",
@@ -93,7 +96,10 @@
       of: (a, b) => `${a} de ${b}`,
       play: "Reproducir", pause: "Pausar",
       openTrack: (x) => `Abrir ${x} en SoundCloud`,
-      playVideo: (x) => `Reproducir ${x}`, stopVideo: (x) => `Detener ${x}`,
+      playVideo: (x) => `Reproducir ${x}`,
+      close: "Cerrar", fullscreen: "Pantalla completa", exitFullscreen: "Salir de pantalla completa",
+      videoPos: "Posición en el video",
+      videoError: "Este video no se puede reproducir aquí.",
     },
   };
 
@@ -145,41 +151,225 @@
   addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  // Video decks: the YouTube player loads inside the deck screen when you press play.
+  /* ---------------- Video player ----------------
+     Opens over the page. Uses YouTube's IFrame API with YouTube's own controls hidden;
+     everything you see and press is ours. */
   const vdecks = $$("[data-vdeck]");
-  function stopVideos(except) {
-    vdecks.forEach((d) => {
-      if (d === except) return;
-      $("iframe", d)?.remove();
-      d.classList.remove("is-live");
-      $$("[data-video-play]", d).forEach((b) => b.setAttribute("aria-label", tr("playVideo", d.dataset.videoTitle)));
+  const vp = {
+    dialog: $("[data-vplayer]"),
+    panel: $("[data-vp-panel]"),
+    screen: $("[data-vp-screen]"),
+    frameHost: $("[data-vp-frame]"),
+    num: $("[data-vp-num]"),
+    title: $("[data-vp-title]"),
+    close: $("[data-vp-close]"),
+    hit: $("[data-vp-toggle]"),
+    play: $("[data-vp-play]"),
+    cur: $("[data-vp-cur]"),
+    dur: $("[data-vp-dur]"),
+    wave: $("[data-vp-wave]"),
+    canvas: $("[data-vp-canvas]"),
+    hover: $("[data-vp-hover]"),
+    vol: $("[data-vp-vol]"),
+    fs: $("[data-vp-fs]"),
+    msg: $("[data-vp-msg]"),
+  };
+  let yt = null;            // YT.Player
+  let ytReady = null;       // Promise for the API
+  let vDeck = null;         // deck currently open
+  let vPlaying = false;
+  let vTick = 0;
+  let vPeaks = [];
+
+  const fmtS = (sec) => {
+    const s = Math.max(0, Math.floor(sec || 0));
+    const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), ss = String(s % 60).padStart(2, "0");
+    return h ? `${h}:${String(m).padStart(2, "0")}:${ss}` : `${m}:${ss}`;
+  };
+
+  function loadYT() {
+    if (window.YT?.Player) return Promise.resolve();
+    if (ytReady) return ytReady;
+    ytReady = new Promise((resolve, reject) => {
+      const prev = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = () => { prev?.(); resolve(); };
+      const s = document.createElement("script");
+      s.src = "https://www.youtube.com/iframe_api";
+      s.onerror = () => { ytReady = null; reject(new Error("YouTube API failed")); };
+      document.head.appendChild(s);
+    });
+    return ytReady;
+  }
+
+  function vSetPlaying(on) {
+    vPlaying = on;
+    vp.panel.classList.toggle("is-playing", on);
+    const label = tr(on ? "pause" : "play");
+    vp.play.setAttribute("aria-label", label);
+    vp.hit.setAttribute("aria-label", label);
+    clearInterval(vTick);
+    if (on) vTick = setInterval(vRender, 250);
+    vRender();
+  }
+
+  function vRender() {
+    if (!yt?.getCurrentTime) return;
+    const cur = yt.getCurrentTime() || 0;
+    const dur = yt.getDuration() || 0;
+    vp.cur.textContent = fmtS(cur);
+    vp.dur.textContent = fmtS(dur);
+    vp.wave.setAttribute("aria-valuenow", dur ? Math.round((cur / dur) * 100) : 0);
+    vp.wave.setAttribute("aria-valuetext", tr("of", fmtS(cur), fmtS(dur)));
+    vDraw(dur ? cur / dur : 0);
+  }
+
+  const vctx = vp.canvas.getContext("2d");
+  function vDraw(ratio) {
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    const w = vp.canvas.clientWidth, h = vp.canvas.clientHeight;
+    if (!w || !h) return;
+    if (vp.canvas.width !== Math.round(w * dpr)) { vp.canvas.width = Math.round(w * dpr); vp.canvas.height = Math.round(h * dpr); }
+    vctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    vctx.clearRect(0, 0, w, h);
+    const bar = 3, gap = 2, count = Math.floor(w / (bar + gap)), mid = h * 0.62, px = ratio * w;
+    for (let k = 0; k < count; k++) {
+      const v = vPeaks[Math.floor((k / count) * vPeaks.length)] || 0.3;
+      const x = k * (bar + gap), up = Math.max(2, v * (mid - 2)), down = Math.max(1, v * (h - mid) * 0.8);
+      const played = x + bar <= px;
+      vctx.fillStyle = played ? "#F0A04B" : "rgba(243,221,212,.30)";
+      vctx.fillRect(x, mid - up, bar, up);
+      vctx.fillStyle = played ? "rgba(240,160,75,.35)" : "rgba(243,221,212,.10)";
+      vctx.fillRect(x, mid + 1, bar, down);
+    }
+    vctx.fillStyle = "#F3DDD4";
+    vctx.fillRect(Math.min(w - 2, px), 0, 2, h);
+  }
+
+  function vSeekRatio(r) {
+    if (!yt?.getDuration) return;
+    const d = yt.getDuration();
+    if (!d) return;
+    yt.seekTo(Math.min(1, Math.max(0, r)) * d, true);
+    vRender();
+  }
+
+  function vToggle() {
+    if (!yt?.getPlayerState) return;
+    vPlaying ? yt.pauseVideo() : yt.playVideo();
+  }
+
+  function vShowMsg(on) {
+    vp.msg.hidden = !on;
+    if (on) {
+      const url = `https://www.youtube.com/watch?v=${vDeck.dataset.videoId}`;
+      vp.msg.innerHTML = `${tr("videoError")} <a href="${url}" target="_blank" rel="noopener">${tr("watchYt")}</a>`;
+    }
+  }
+
+  async function openVideo(d) {
+    if (player) player.pause();
+    vDeck = d;
+    vdecks.forEach((o) => o.classList.toggle("is-live", o === d));
+    const { videoId: id, videoStart: start = 0, videoTitle: title } = d.dataset;
+    vp.num.textContent = d.classList.contains("vdeck--2") ? "2" : "1";
+    vp.title.textContent = title;
+    vPeaks = fakePeaks(parseInt(id.replace(/\D/g, "") || "7", 10) + 13);
+    vp.cur.textContent = fmtS(start);
+    vp.dur.textContent = "0:00";
+    vShowMsg(false);
+    vp.dialog.showModal();
+    vDraw(0);
+    try {
+      await loadYT();
+    } catch (_) {
+      vShowMsg(true);
+      return;
+    }
+    if (vDeck !== d) return;
+    if (yt) {
+      yt.loadVideoById({ videoId: id, startSeconds: Number(start) });
+      yt.setVolume(Number(vp.vol.value));
+      return;
+    }
+    yt = new YT.Player(vp.frameHost, {
+      host: "https://www.youtube-nocookie.com",
+      videoId: id,
+      playerVars: {
+        autoplay: 1, controls: 0, disablekb: 1, fs: 0, rel: 0, iv_load_policy: 3,
+        playsinline: 1, start: Number(start), modestbranding: 1, origin: location.origin,
+      },
+      events: {
+        onReady: (e) => { e.target.setVolume(Number(vp.vol.value)); e.target.playVideo(); vRender(); },
+        onStateChange: (e) => {
+          const S = YT.PlayerState;
+          if (e.data === S.PLAYING) vSetPlaying(true);
+          else if (e.data === S.PAUSED || e.data === S.CUED) vSetPlaying(false);
+          else if (e.data === S.ENDED) {
+            vSetPlaying(false);
+            yt.seekTo(Number(vDeck?.dataset.videoStart || 0), true);
+            yt.pauseVideo();
+          }
+        },
+        onError: () => vShowMsg(true),
+      },
     });
   }
-  function startVideo(d) {
-    stopVideos(d);
-    if (player) player.pause();
-    const { videoId: id, videoStart: start = 0, videoTitle: title } = d.dataset;
-    const iframe = document.createElement("iframe");
-    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&start=${start}&playsinline=1&rel=0&modestbranding=1`;
-    iframe.title = title;
-    iframe.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
-    iframe.allowFullscreen = true;
-    $("[data-vscreen]", d).appendChild(iframe);
-    d.classList.add("is-live");
-    $$("[data-video-play]", d).forEach((b) => b.setAttribute("aria-label", tr("stopVideo", title)));
+
+  function closeVideo() {
+    try { yt?.pauseVideo(); } catch (_) {}
+    vSetPlaying(false);
+    vdecks.forEach((o) => o.classList.remove("is-live"));
+    if (document.fullscreenElement) document.exitFullscreen?.();
   }
-  langListeners.push(() =>
-    vdecks.forEach((d) =>
-      $$("[data-video-play]", d).forEach((b) =>
-        b.setAttribute("aria-label", tr(d.classList.contains("is-live") ? "stopVideo" : "playVideo", d.dataset.videoTitle))
-      )
-    )
-  );
-  vdecks.forEach((d) =>
-    $$("[data-video-play]", d).forEach((btn) =>
-      btn.addEventListener("click", () => (d.classList.contains("is-live") ? stopVideos() : startVideo(d)))
-    )
-  );
+
+  vdecks.forEach((d) => $$("[data-video-play]", d).forEach((btn) => btn.addEventListener("click", () => openVideo(d))));
+  vp.dialog?.addEventListener("close", closeVideo);
+  vp.dialog?.addEventListener("click", (e) => { if (e.target === vp.dialog) vp.dialog.close(); });
+  vp.close.addEventListener("click", () => vp.dialog.close());
+  vp.hit.addEventListener("click", vToggle);
+  vp.hit.addEventListener("dblclick", () => vp.fs.click());
+  vp.play.addEventListener("click", vToggle);
+  vp.vol.addEventListener("input", () => {
+    vp.vol.style.setProperty("--v", `${vp.vol.value}%`);
+    yt?.setVolume?.(Number(vp.vol.value));
+  });
+  vp.vol.style.setProperty("--v", `${vp.vol.value}%`);
+
+  const vRatio = (e) => { const r = vp.wave.getBoundingClientRect(); return (e.clientX - r.left) / r.width; };
+  vp.wave.addEventListener("pointerdown", (e) => { vp.wave.setPointerCapture(e.pointerId); vSeekRatio(vRatio(e)); });
+  vp.wave.addEventListener("pointermove", (e) => {
+    const r = Math.min(1, Math.max(0, vRatio(e)));
+    vp.hover.style.left = `${r * 100}%`;
+    vp.hover.dataset.t = yt?.getDuration ? fmtS(r * yt.getDuration()) : "";
+    if (e.buttons && vp.wave.hasPointerCapture(e.pointerId)) vSeekRatio(r);
+  });
+  vp.dialog?.addEventListener("keydown", (e) => {
+    if (!yt?.getCurrentTime || e.target === vp.vol) return;
+    if (e.key === " " && e.target.tagName !== "BUTTON") { e.preventDefault(); vToggle(); }
+    if (e.key === "k") vToggle();
+    const step = { ArrowRight: 10, ArrowLeft: -10, l: 10, j: -10 }[e.key];
+    if (step) { e.preventDefault(); yt.seekTo(yt.getCurrentTime() + step, true); vRender(); }
+    if (e.key === "f") vp.fs.click();
+  });
+
+  if (!document.fullscreenEnabled) vp.fs.hidden = true;
+  vp.fs.addEventListener("click", () => {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else vp.panel.requestFullscreen?.();
+  });
+  document.addEventListener("fullscreenchange", () => {
+    vp.fs.setAttribute("aria-label", tr(document.fullscreenElement ? "exitFullscreen" : "fullscreen"));
+    requestAnimationFrame(vRender);
+  });
+  new ResizeObserver(() => vRender()).observe(vp.canvas);
+
+  langListeners.push(() => {
+    vdecks.forEach((d) => $$("[data-video-play]", d).forEach((b) => b.setAttribute("aria-label", tr("playVideo", d.dataset.videoTitle))));
+    const label = tr(vPlaying ? "pause" : "play");
+    vp.play.setAttribute("aria-label", label);
+    vp.hit.setAttribute("aria-label", label);
+    if (!vp.msg.hidden) vShowMsg(true);
+  });
 
   // YouTube serves a tiny grey placeholder when a video has no max-res thumbnail; fall back to the HQ one.
   $$("[data-yt-thumb]").forEach((img) => {
@@ -473,7 +663,7 @@
     });
 
     w.bind(E.PLAY, () => {
-      stopVideos();
+      if (vp.dialog?.open) vp.dialog.close();
       // If someone pressed play on a visible fallback widget, follow it.
       if (t !== cur) select(t.i, false);
       tracks.forEach((o) => o !== t && o.ready && o.widget.pause());
