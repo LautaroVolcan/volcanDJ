@@ -33,6 +33,7 @@
     </a>
     <nav class="top__nav" aria-label="Main">
       <a href="#mixes">Mixes</a>
+      <a href="#videos">Videos</a>
       <a href="#about">About</a>
       <a href="#booking">Booking</a>
     </nav>
@@ -57,7 +58,7 @@
           <p class="hero__lede">I shape minimal beats, deep grooves and dark ambiances into immersive sonic journeys.</p>
           <div class="hero__actions">
             <a class="btn btn--solid" href="#mixes">Listen to the mixes</a>
-            <button class="btn" type="button" data-video-open>Watch a set</button>
+            <a class="btn" href="#videos">Watch a set</a>
           </div>
         </div>
       </div>
@@ -176,6 +177,68 @@
       </div>
     </section>
 
+    <!-- Videos -->
+    <section id="videos" class="videos" aria-labelledby="videos-title">
+      <div class="wrap">
+        <div class="mixes__head">
+          <h2 id="videos-title" class="h2">Videos</h2>
+          <p class="mixes__intro">Two sets on camera. Press a deck to watch it here.</p>
+        </div>
+
+        <div class="vdecks">
+          <article class="vdeck vdeck--1">
+            <button class="vdeck__screen" type="button" data-video-open data-video-id="7vkOglBB7mk" data-video-start="1500" data-video-title="Live session #1">
+              <img src="https://i.ytimg.com/vi/7vkOglBB7mk/maxresdefault.jpg" alt="" loading="lazy" data-yt-thumb="7vkOglBB7mk">
+              <span class="vdeck__hud" aria-hidden="true">
+                <span class="vdeck__num">1</span>
+                <span class="vdeck__name">Live session #1</span>
+              </span>
+              <span class="vdeck__wave" aria-hidden="true"></span>
+              <span class="sr">Play Live session #1</span>
+            </button>
+            <div class="vdeck__base">
+              <span class="vdeck__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span>
+              <div class="vdeck__meta">
+                <h3 class="vdeck__title">Live session #1</h3>
+                <a class="vdeck__yt" href="https://www.youtube.com/watch?v=7vkOglBB7mk&t=1500s" target="_blank" rel="noopener">Watch on YouTube</a>
+              </div>
+            </div>
+          </article>
+
+          <div class="mixer" aria-hidden="true">
+            <div class="mixer__ch mixer__ch--1">
+              <span class="meter"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+              <span class="vfader"><span class="vfader__cap"></span></span>
+            </div>
+            <div class="mixer__ch mixer__ch--2">
+              <span class="meter"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+              <span class="vfader"><span class="vfader__cap"></span></span>
+            </div>
+            <div class="xfader"><span class="xfader__cap"></span></div>
+          </div>
+
+          <article class="vdeck vdeck--2">
+            <button class="vdeck__screen" type="button" data-video-open data-video-id="L5LTvuj2zEo" data-video-start="0" data-video-title="Live session #2">
+              <img src="https://i.ytimg.com/vi/L5LTvuj2zEo/maxresdefault.jpg" alt="" loading="lazy" data-yt-thumb="L5LTvuj2zEo">
+              <span class="vdeck__hud" aria-hidden="true">
+                <span class="vdeck__num">2</span>
+                <span class="vdeck__name">Live session #2</span>
+              </span>
+              <span class="vdeck__wave" aria-hidden="true"></span>
+              <span class="sr">Play Live session #2</span>
+            </button>
+            <div class="vdeck__base">
+              <span class="vdeck__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span>
+              <div class="vdeck__meta">
+                <h3 class="vdeck__title">Live session #2</h3>
+                <a class="vdeck__yt" href="https://www.youtube.com/watch?v=L5LTvuj2zEo" target="_blank" rel="noopener">Watch on YouTube</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- About -->
     <section id="about" class="about" aria-labelledby="about-title">
       <div class="wrap about__grid">
@@ -223,7 +286,7 @@
 
   <dialog class="video" data-video>
     <form method="dialog" class="video__bar">
-      <p>Live set</p>
+      <p data-video-heading>Live set</p>
       <button class="video__close" type="submit" aria-label="Close video">Close</button>
     </form>
     <div class="video__frame" data-video-frame></div>

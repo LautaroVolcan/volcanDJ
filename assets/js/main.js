@@ -21,24 +21,38 @@
   onScroll();
 
   // Video dialog (YouTube, privacy-enhanced domain). Iframe is created on open and removed on close.
-  const VIDEO_ID = "7vkOglBB7mk";
-  const VIDEO_START = 1500;
   const dialog = $("[data-video]");
   const frame = $("[data-video-frame]");
+  const dialogTitle = $("[data-video-heading]");
   $$("[data-video-open]").forEach((btn) =>
     btn.addEventListener("click", () => {
+      const id = btn.dataset.videoId;
+      const start = Number(btn.dataset.videoStart || 0);
+      const title = btn.dataset.videoTitle || "Live set";
       if (!dialog || typeof dialog.showModal !== "function") {
-        window.open(`https://www.youtube.com/watch?v=${VIDEO_ID}&t=${VIDEO_START}s`, "_blank", "noopener");
+        window.open(`https://www.youtube.com/watch?v=${id}${start ? `&t=${start}s` : ""}`, "_blank", "noopener");
         return;
       }
       if (player) player.pause();
-      frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${VIDEO_ID}?start=${VIDEO_START}&autoplay=1&rel=0"
-        title="Lautaro Volcan live set" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+      frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?start=${start}&autoplay=1&rel=0"
+        title="${title}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+      if (dialogTitle) dialogTitle.textContent = title;
       dialog.showModal();
     })
   );
   dialog?.addEventListener("close", () => (frame.innerHTML = ""));
   dialog?.addEventListener("click", (e) => { if (e.target === dialog) dialog.close(); });
+
+  // YouTube serves a tiny grey placeholder when a video has no max-res thumbnail; fall back to the HQ one.
+  $$("[data-yt-thumb]").forEach((img) => {
+    const fallback = () => {
+      const hq = `https://i.ytimg.com/vi/${img.dataset.ytThumb}/hqdefault.jpg`;
+      if (img.src !== hq) img.src = hq;
+    };
+    img.addEventListener("error", fallback);
+    img.addEventListener("load", () => { if (img.naturalWidth <= 120) fallback(); });
+    if (img.complete && img.naturalWidth && img.naturalWidth <= 120) fallback();
+  });
 
   /* ---------------- Player ---------------- */
 
