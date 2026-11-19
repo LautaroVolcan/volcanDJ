@@ -1,600 +1,346 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lautaro Volcan — DJ</title>
+  <meta name="description" content="Lautaro Volcan is an Argentine-Spanish DJ based in Barcelona playing tech house, house, techno, nu disco and ambient. Listen to his mixes and get in touch for bookings.">
+  <meta name="author" content="Lautaro Ferrandi">
+  <meta name="theme-color" content="#1C0A0C">
 
-    <!--- basic page needs
-    ================================================== -->
-    <meta charset="utf-8">
-    <title>Lautaro Volcan</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lautaro Volcan — DJ">
+  <meta property="og:description" content="Minimal beats, deep grooves and dark ambiances. Mixes, bio and bookings.">
+  <meta property="og:image" content="assets/img/hero-1920.jpg">
 
-    <!-- mobile specific metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/vendor.css">
-
-    <!-- script
-    ================================================== -->
-    <script src="js/modernizr.js"></script>
-    <script defer src="js/fontawesome/all.min.js"></script>
-
-    <!-- favicons
-    ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="VolcanIco_180x180.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="VolcanIco_32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="VolcanIco_16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-
+  <link rel="preload" href="assets/fonts/unbounded-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
+<body>
 
-<body id="top">
+  <a class="skip" href="#mixes" data-i18n="skip">Skip to the mixes</a>
 
-
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader" class="dots-fade">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+  <header class="top">
+    <a class="top__mark" href="#hero" aria-label="Lautaro Volcan, back to top" data-i18n-attr="aria-label:backTop">
+      <span class="dot" aria-hidden="true"></span>
+      <span>Lautaro Volcan</span>
+    </a>
+    <div class="top__right">
+      <nav class="top__nav" aria-label="Main" data-i18n-attr="aria-label:navLabel">
+        <a href="#mixes" data-i18n="navMixes">Mixes</a>
+        <a href="#videos" data-i18n="navVideos">Videos</a>
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#booking" data-i18n="navBooking">Booking</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:langLabel">
+        <button type="button" data-lang-set="en" aria-pressed="true" lang="en">EN</button>
+        <button type="button" data-lang-set="es" aria-pressed="false" lang="es">ES</button>
+      </div>
     </div>
+  </header>
 
+  <main>
 
-    <!-- header
-    ================================================== -->
-    <header class="s-header">
+    <!-- Hero -->
+    <section id="hero" class="hero">
+      <picture class="hero__photo">
+        <source type="image/webp" srcset="assets/img/hero-960.webp 960w, assets/img/hero-1920.webp 1920w" sizes="100vw">
+        <img src="assets/img/hero-1920.jpg" srcset="assets/img/hero-960.jpg 960w, assets/img/hero-1920.jpg 1920w" sizes="100vw"
+             alt="Lautaro behind the decks at home, lit in red and amber, with a lava lamp glowing beside him" data-i18n-attr="alt:heroAlt" fetchpriority="high">
+      </picture>
 
-        <div class="s-header__logo">
-            <a href="index.html">
-                <img src="VolcanIco_32x32.png" alt="Homepage">
-            </a>
+      <div class="hero__body">
+        <h1 class="hero__name">
+          <span>Lautaro</span>
+          <span>Volcan</span>
+        </h1>
+        <div class="hero__side">
+          <p class="hero__lede" data-i18n="lede">I shape minimal beats, deep grooves and dark ambiances into immersive sonic journeys.</p>
+          <div class="hero__actions">
+            <a class="btn btn--solid" href="#mixes" data-i18n="ctaListen">Listen to the mixes</a>
+            <a class="btn" href="#videos" data-i18n="ctaWatch">Watch a set</a>
+          </div>
         </div>
-
-        <div class="s-header__content">
-    
-            <nav class="s-header__nav-wrap">
-                <ul class="s-header__nav">
-                    <li><a class="smoothscroll" href="#hero" title="Intro">Home</a></li>
-                    <li><a class="smoothscroll" href="#about" title="About">About Me</a></li>
-                    <li><a class="smoothscroll" href="#contact" title="Contact">Contact</a></li>
-                    <li><a class="smoothscroll" href="#portfolio" title="Music">Music</a></li>
-                </ul>
-            </nav> <!-- end s-header__nav-wrap -->
-
-            <a href="#contact" class="btn btn--primary btn--small">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
-                Get In Touch
-            </a>
-
-        </div> <!-- end header-content -->
-
-        <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
-
-    </header> <!-- end s-header -->
-
-
-    <!-- hero
-    ================================================== -->
-    <section id="hero" class="s-hero target-section">
-
-        <div class="s-hero__bg">
-            <div class="gradient-overlay"></div>
-        </div>
-
-        <div class="row s-hero__content">
-            <div class="column">
-
-                <h1>Hello.</h1>
-                <div class="s-hero__content-about">
-
-                    <p>
-                    Immerse in sound. I shape minimal beats, <br>
-                    deep grooves, and dark ambiances <br>
-                    into immersive sonic journeys.
-                    </p>
-    
-                    <footer>
-                        <div class="s-hero__content-social">
-                            <!-- <a href="#0"><i class="fab fa-facebook-f" aria-hidden="true"></i></a> -->
-                            <!-- <a href="#0"><i class="fab fa-twitter" aria-hidden="true"></i></a> -->
-                            <a href="https://www.instagram.com/lautarovolcan/?hl=es-la" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                            <a href="https://soundcloud.com/lautarovolcan" target="_blank"><i class="fab fa-soundcloud" aria-hidden="true"></i></a>
-                        </div>
-                    </footer>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="s-hero__video">
-            <a class="s-hero__video-link" href="https://www.youtube.com/watch?v=7vkOglBB7mk&t=1500s&ab_channel=LautaroFerrandi" data-lity="">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 12l-18 12v-24z"/></svg>
-                <span class="s-hero__video-text">Play Video</span>
-            </a>
-        </div>
-
-        <div class="s-hero__scroll">
-            <a href="#about" class="s-hero__scroll-link smoothscroll">
-                Scroll Down
-            </a>
-        </div>
-
-    </section> <!-- end s-hero -->
-
-
-    <!-- about
-    ================================================== -->
-    <section id="about" class="s-about">
-
-        <div class="horizontal-line"></div>
-
-        <div class="row">
-            <!-- <div class="column large-12">
-
-                <div class="section-title" data-num="01" data-aos="fade-up">
-                    <h3 class="h6">Who We Are</h3>
-                </div>
-
-            </div> -->
-
-            <div class="column large-6 w-900-stack s-about__intro-text">
-                <h1 class="display-1" data-aos="fade-up">
-                    I am Lautaro Ferrandi, AKA LAUTARO VOLCAN, an Argentinian/Spanish DJ.
-                </h1>
-
-                <p class="lead" data-aos="fade-up">
-                    I am passionate about Tech House, House, Techno, Nu Disco, and Ambient music,
-                    and I focus on creating unique musical atmospheres that connect deeply with the audience. I love selecting tracks
-                    with groove,
-                    vocals, and rhythmic patterns, exploring their essence to build immersive sonic experiences that prioritize
-                    collective enjoyment.<br>
-                
-                    As a DJ, I pride myself on my versatility and creativity, delivering innovative sets that blend a wide range of
-                    styles.
-                    I’ve had the opportunity to perform at clubs and events in different countries, adapting to diverse audiences and
-                    venues.<br>
-                    My interest in the Ambient genre allows me to incorporate introspective elements into my mixes, creating atmospheres
-                    filled with emotion and depth.
-                </p>
-            </div>
-
-            <div class="column large-6 w-900-stack s-about__photo-block">
-                <div class="s-about__photo" data-aos="fade-up"></div>
-            </div>
-        </div>
-
-        <!-- <div class="row block-large-1-2 block-tab-full s-about__process item-list">
-            <div class="column item item-process" data-aos="fade-up">
-                <h3 class="item-title">Define</h3>
-                <p>
-                Deserunt rerum perspiciatis quaerat quam numquam assumenda neque. 
-                Quis dolores totam voluptatibus molestiae non. Quae exercitationem 
-                cum numquam repudiandae. Beatae eum quae. Ut ex unde rem quod 
-                ipsum consequatur. blanditiis temporibus pariatur voluptatibus molestiae.
-                </p>
-            </div>
-            <div class="column item item-process" data-aos="fade-up">
-                <h3 class="item-title">Design</h3>
-                <p>
-                Deserunt rerum perspiciatis quaerat quam numquam assumenda neque. 
-                Quis dolores totam voluptatibus molestiae non. Quae exercitationem 
-                cum numquam repudiandae. Beatae eum quae. Ut ex unde rem quod 
-                ipsum consequatur. blanditiis temporibus pariatur voluptatibus molestiae.
-                </p>
-            </div>
-            <div class="column item item-process" data-aos="fade-up">
-                <h3 class="item-title">Build</h3>
-                <p>
-                Deserunt rerum perspiciatis quaerat quam numquam assumenda neque. 
-                Quis dolores totam voluptatibus molestiae non. Quae exercitationem 
-                cum numquam repudiandae. Beatae eum quae. Ut ex unde rem quod 
-                ipsum consequatur. blanditiis temporibus pariatur voluptatibus molestiae.
-                </p>
-            </div>
-            <div class="column item item-process" data-aos="fade-up">
-                <h3 class="item-title">Launch</h3>
-                <p>
-                Deserunt rerum perspiciatis quaerat quam numquam assumenda neque. 
-                Quis dolores totam voluptatibus molestiae non. Quae exercitationem 
-                cum numquam repudiandae. Beatae eum quae. Ut ex unde rem quod 
-                ipsum consequatur. blanditiis temporibus pariatur voluptatibus molestiae.
-                </p>
-            </div>
-        </div> -->
-
+      </div>
     </section>
-     <!-- end s-about -->
 
-
-    <!-- services
-    ================================================== -->
-    <!-- <section id="services" class="s-services">
-
-        <div class="row">
-            <div class="column large-12">
-                <div class="section-title" data-num="02" data-aos="fade-up">
-                    <h3 class="h6">Our Expertise</h3>
-                </div>
-            </div>
-            <div class="column large-6 w-900-stack">
-                <h1 class="display-1" data-aos="fade-up">
-                    Deserunt rerum perspiciatis quaerat quam numquam assumenda neque. 
-                    Quis dolores totam voluptatibus. 
-                </h1>
-            </div>
-            <div class="column large-6 w-900-stack">
-                <p class="lead" data-aos="fade-up">
-                Velit deleniti harum sit beatae sint repellendus expedita. Omnis possimus 
-                sed rerum tenetur ea ab aut minima magnam. Deserunt sit cupiditate 
-                similique eveniet earum. Consectetur dolores maxime quisquam voluptate magni.
-                Ut ex unde rem quod ipsum consequatur. blanditiis temporibus pariatur voluptatibus molestiae.
-                </p>
-            </div>
+    <!-- Mixes / player -->
+    <section id="mixes" class="mixes" aria-labelledby="mixes-title">
+      <div class="wrap">
+        <div class="mixes__head">
+          <h2 id="mixes-title" class="h2">Mixes</h2>
+          <p class="mixes__intro" data-i18n="mixesIntro">Recorded sessions from the booth. Pick one from the crate and it loads on the deck.</p>
         </div>
 
-        <div class="row block-large-1-2 block-tab-full s-services__services item-list">
-            <div class="column item item-service" data-aos="fade-up">
-                <span class="service-icon service-icon--product-design"></span>
-                <h3 class="item-title">Product Design</h3>
-                <p>
-                Deserunt rerum perspiciatis quaerat quam numquam assumenda neque. 
-                Quis dolores totam voluptatibus molestiae non. Quae exercitationem 
-                cum numquam repudiandae. Beatae eum quae. Ut ex unde rem quod 
-                ipsum consequatur. blanditiis temporibus pariatur voluptatibus molestiae.
-                </p>
+        <div class="deck panel" data-deck>
+          <div class="deck__platter-wrap">
+            <div class="platter" data-platter>
+              <div class="platter__label">
+                <img data-art alt="" hidden>
+                <span class="platter__fallback" aria-hidden="true">LV</span>
+              </div>
+              <span class="platter__marker" aria-hidden="true"></span>
             </div>
-            <div class="column item item-service" data-aos="fade-up">
-                <span class="service-icon service-icon--branding"></span>
-                <h3 class="item-title">Branding</h3>
-                <p>
-                Deserunt rerum perspiciatis quaerat quam numquam assumenda neque. 
-                Quis dolores totam voluptatibus molestiae non. Quae exercitationem 
-                cum numquam repudiandae. Beatae eum quae. Ut ex unde rem quod 
-                ipsum consequatur. blanditiis temporibus pariatur voluptatibus molestiae.
-                </p>
-            </div>
-            <div class="column item item-service" data-aos="fade-up">
-                <span class="service-icon service-icon--frontend"></span>
-                <h3 class="item-title">Frontend Development</h3>
-                <p>
-                Deserunt rerum perspiciatis quaerat quam numquam assumenda neque. 
-                Quis dolores totam voluptatibus molestiae non. Quae exercitationem 
-                cum numquam repudiandae. Beatae eum quae. Ut ex unde rem quod 
-                ipsum consequatur. blanditiis temporibus pariatur voluptatibus molestiae.
-                </p>
-            </div>
-            <div class="column item item-service" data-aos="fade-up">
-                <span class="service-icon service-icon--research"></span>
-                <h3 class="item-title">UX Research</h3>
-                <p>
-                Deserunt rerum perspiciatis quaerat quam numquam assumenda neque. 
-                Quis dolores totam voluptatibus molestiae non. Quae exercitationem 
-                cum numquam repudiandae. Beatae eum quae. Ut ex unde rem quod 
-                ipsum consequatur. blanditiis temporibus pariatur voluptatibus molestiae.
-                </p>
-            </div>
-            <div class="column item item-service" data-aos="fade-up">
-                <span class="service-icon service-icon--illustration"></span>
-                <h3 class="item-title">Illustration</h3>
-                <p>
-                Deserunt rerum perspiciatis quaerat quam numquam assumenda neque. 
-                Quis dolores totam voluptatibus molestiae non. Quae exercitationem 
-                cum numquam repudiandae. Beatae eum quae. Ut ex unde rem quod 
-                ipsum consequatur. blanditiis temporibus pariatur voluptatibus molestiae.
-                </p>
-            </div>
-            <div class="column item item-service" data-aos="fade-up">
-                <span class="service-icon service-icon--ecommerce"></span>
-                <h3 class="item-title">E-Commerce</h3>
-                <p>
-                Deserunt rerum perspiciatis quaerat quam numquam assumenda neque. 
-                Quis dolores totam voluptatibus molestiae non. Quae exercitationem 
-                cum numquam repudiandae. Beatae eum quae. Ut ex unde rem quod 
-                ipsum consequatur. blanditiis temporibus pariatur voluptatibus molestiae.
-                </p>
-            </div>
-        </div> -->
+          </div>
 
-    <!-- </section>  -->
-
-    <!-- end s-services -->
-
-    <section id="portfolio" class="s-portfolio">
-
-        <div class="row s-porfolio__top">
-
-            <div class="column large-6 w-900-stack">
-                <h1 class="display-1" data-aos="fade-up">
-                    MUSIC
-                </h1>
-            </div>
-        </div>  
-        <!--end s-portfolio__top -->
-
-        <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse">
-        
-            <div class="column" data-aos="fade-up">
-
-                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1863062646&color=%23a43e42&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/lautarovolcan" title="LautaroVolcan" target="_blank" style="color: #cccccc; text-decoration: none;">LautaroVolcan</a> · <a href="https://soundcloud.com/lautarovolcan/deep-house-session-1" title="Deep House -  #1" target="_blank" style="color: #cccccc; text-decoration: none;">Deep House -  #1</a></div>
-        
+          <div class="deck__panel">
+            <div class="lcd" aria-live="polite">
+              <div class="lcd__row lcd__row--top">
+                <span class="led" data-led aria-hidden="true"></span>
+                <span class="lcd__state" data-state>Ready</span>
+                <span class="lcd__genre" data-genre></span>
+              </div>
+              <p class="lcd__title" data-title>Choose a mix</p>
+              <button class="lcd__time" type="button" data-time-toggle aria-label="Switch between elapsed and remaining time" data-i18n-attr="aria-label:timeToggle">
+                <span class="lcd__time-mode" data-time-mode>Elapsed</span>
+                <span class="lcd__time-value" data-time>0:00:00</span>
+              </button>
             </div>
 
-            <div class="column" data-aos="fade-up">
-
-                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1986599415&color=%23a43e42&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/lautarovolcan" title="LautaroVolcan" target="_blank" style="color: #cccccc; text-decoration: none;">LautaroVolcan</a> · <a href="https://soundcloud.com/lautarovolcan/deep-house-2" title="Deep House - #2" target="_blank" style="color: #cccccc; text-decoration: none;">Deep House - #2</a></div>
-        
+            <div class="wave" data-wave role="slider" tabindex="0" aria-label="Position in the mix" data-i18n-attr="aria-label:wavePos"
+                 aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="0:00">
+              <canvas data-wave-canvas></canvas>
+              <span class="wave__hover" data-wave-hover aria-hidden="true"></span>
             </div>
 
-            <div class="column" data-aos="fade-up">
+            <div class="controls">
+              <button class="ctl" type="button" data-prev aria-label="Previous mix" data-i18n-attr="aria-label:prev">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg>
+              </button>
+              <button class="ctl ctl--play" type="button" data-play aria-label="Play">
+                <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>
+                <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+              </button>
+              <button class="ctl" type="button" data-next aria-label="Next mix" data-i18n-attr="aria-label:next">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg>
+              </button>
 
-                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1989066035&color=%23a43e42&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/lautarovolcan" title="LautaroVolcan" target="_blank" style="color: #cccccc; text-decoration: none;">LautaroVolcan</a> · <a href="https://soundcloud.com/lautarovolcan/melodic-house-1" title="Melodic House - #1" target="_blank" style="color: #cccccc; text-decoration: none;">Melodic House - #1</a></div>
-        
+              <label class="fader">
+                <span class="sr" data-i18n="volume">Volume</span>
+                <input type="range" min="0" max="100" value="80" data-volume>
+              </label>
+
+              <a class="deck__sc" data-permalink href="https://soundcloud.com/lautarovolcan" target="_blank" rel="noopener" data-i18n="openSc">Open on SoundCloud</a>
             </div>
 
-            <div class="column" data-aos="fade-up">
+            <p class="deck__fallback" data-fallback hidden data-i18n="fallback">Your browser blocked playback from the custom player. Use the SoundCloud player below instead.</p>
+          </div>
 
-                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1989874083&color=%23a43e42&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/lautarovolcan" title="LautaroVolcan" target="_blank" style="color: #cccccc; text-decoration: none;">LautaroVolcan</a> · <a href="https://soundcloud.com/lautarovolcan/tech-house-1" title="Tech House -  #1" target="_blank" style="color: #cccccc; text-decoration: none;">Tech House -  #1</a></div>
-        
-            </div>
-          
-          
-        
-            
+          <!-- SoundCloud widgets live here. Hidden unless the browser blocks remote playback. -->
+          <div class="deck__engine" data-engine></div>
+        </div>
 
-        </div> 
-        <!-- folio-list -->
+        <ol class="crate" data-crate aria-label="Mixes">
+          <li>
+            <button class="crate__item" type="button"
+                    data-track="1989874083"
+                    data-url="https://soundcloud.com/lautarovolcan/tech-house-1"
+                    data-genre="Tech house">
+              <span class="crate__title">Tech House #1</span>
+              <span class="crate__genre">Tech house</span>
+              <span class="crate__len" data-len>—</span>
+            </button>
+          </li>
+          <li>
+            <button class="crate__item" type="button"
+                    data-track="1989066035"
+                    data-url="https://soundcloud.com/lautarovolcan/melodic-house-1"
+                    data-genre="Melodic house">
+              <span class="crate__title">Melodic House #1</span>
+              <span class="crate__genre">Melodic house</span>
+              <span class="crate__len" data-len>—</span>
+            </button>
+          </li>
+          <li>
+            <button class="crate__item" type="button"
+                    data-track="1986599415"
+                    data-url="https://soundcloud.com/lautarovolcan/deep-house-2"
+                    data-genre="Deep house">
+              <span class="crate__title">Deep House #2</span>
+              <span class="crate__genre">Deep house</span>
+              <span class="crate__len" data-len>—</span>
+            </button>
+          </li>
+          <li>
+            <button class="crate__item" type="button"
+                    data-track="1863062646"
+                    data-url="https://soundcloud.com/lautarovolcan/deep-house-session-1"
+                    data-genre="Deep house">
+              <span class="crate__title">Deep House #1</span>
+              <span class="crate__genre">Deep house</span>
+              <span class="crate__len" data-len>—</span>
+            </button>
+          </li>
+        </ol>
 
+        <p class="credit"><span data-i18n="credit">Audio streamed from</span> <a href="https://soundcloud.com/lautarovolcan" target="_blank" rel="noopener">SoundCloud</a>.</p>
+      </div>
     </section>
-    <!-- end s-portfolio -->
 
-
-    <!-- clients
-    ================================================== -->
-    <!-- <div id="clients" class="section s-clients">
-
-        <div class="row narrower s-clients__top h-text-center">
-            <div class="column">
-                <h1 class="display-1" data-aos="fade-up">
-                We've had the priveledge with working with
-                some of the largest and most iconic brands
-                </h1>
-            </div> -->
-        <!-- </div>  -->
-        <!-- s-clients__top -->
-
-        <!-- <div class="row clients-outer">
-            <div class="column">
-                <div class="clients" data-aos="fade-up">
-                    
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/dropbox.svg" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/atom.svg" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/github.svg" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/redhat.svg" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/medium.svg" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/messenger.svg" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/steam.svg" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/spotify.svg" /></a>
-                      -->
-                <!-- </div> -->
-                 <!-- end clients -->
-            <!-- </div>  -->
-            <!-- end column -->
-        <!-- </div> -->
-         <!-- end clients-outer -->
-
-        <!-- <div class="row testimonials collapse">
-
-            <div class="column large-12">
-
-                <div class="testimonial-slider" data-aos="fade-up">
-
-                    <div class="testimonial-slider__slide">
-                        <p>
-                        Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. 
-                        Explicabo a quaerat sint autem dolore ducimus ut consequatur neque.  Nisi dolores quaerat fuga rem nihil nostrum.
-                        Laudantium quia consequatur molestias delectus culpa.
-                        </p>
-                        <div class="testimonial-slider__author">
-                            <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonial-slider__avatar">
-                            <cite class="testimonial-slider__cite">
-                                <strong>Tim Cook</strong>
-                                <span>CEO, Apple</span>
-                            </cite>
-                        </div> -->
-                    <!-- </div>  -->
-                    <!-- end testimonials__slide -->
-    
-                    <!-- <div class="testimonial-slider__slide">
-                        <p>
-                        Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-                        Nisi eaque consequatur. Voluptatem dignissimos ut ducimus accusantium perspiciatis.
-                        Quasi voluptas eius distinctio. Atque eos maxime.
-                        </p>
-                        <div class="testimonial-slider__author">
-                            <img src="images/avatars/user-01.jpg" alt="Author image" class="testimonial-slider__avatar">
-                            <cite class="testimonial-slider__cite">
-                                <strong>Sundar Pichai</strong>
-                                <span>CEO, Google</span>
-                            </cite>
-                        </div> -->
-                    <!-- </div>  -->
-                    <!-- end testimonials__slide -->
-    
-                    <!-- <div class="testimonial-slider__slide">
-                        <p>
-                        Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.  
-                        Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.
-                        Voluptatem dignissimos ut.
-                        </p>
-                        <div class="testimonial-slider__author">
-                            <img src="images/avatars/user-04.jpg" alt="Author image" class="testimonial-slider__avatar">
-                            <cite class="testimonial-slider__cite">
-                                <strong>Satya Nadella</strong>
-                                <span>CEO, Microsoft</span>
-                            </cite>
-                        </div> -->
-                    <!-- </div>  -->
-                    <!-- end testimonials__slide -->
-    
-                    <!-- <div class="testimonial-slider__slide">
-                        <p>
-                        Nunc interdum lacus sit amet orci. Vestibulum dapibus nunc ac augue. Fusce vel dui. In ac felis 
-                        quis tortor malesuada pretium. Curabitur vestibulum aliquam leo. Qui sed at corrupti expedita voluptas odit. 
-                        Nihil ea quia nesciunt. Ducimus aut sed ipsam.
-                        </p>
-                        <div class="testimonial-slider__author">
-                            <img src="images/avatars/user-05.jpg" alt="Author image" class="testimonial-slider__avatar">
-                            <cite class="testimonial-slider__cite">
-                                <strong>Jeff Bezos</strong>
-                                <span>CEO, Amazon</span>
-                            </cite>
-                        </div> -->
-                    <!-- </div>  -->
-                    <!-- end testimonials__slide -->
-
-                <!-- </div>  -->
-                <!-- end testimonial slider -->
-                
-            <!-- </div> -->
-             <!-- end column -->
-
-        <!-- </div> -->
-         <!-- end row -->
-
-
-    <!-- </div>  -->
-    <!-- end s-clients -->
-
-
-    <!-- contact
-    ================================================== -->
-    <section id="contact" class="s-contact">
-
-        <div class="row narrower s-contact__top h-text-center">
-            <div class="column">
-                <h3 class="h6">Get In Touch</h3>
-                <!-- <h1 class="display-1">
-                Have an idea or an epic project in mind? Talk to
-                us. Let us work together and make something great.
-                Shoot us a message at
-                </h1> -->
-            </div>
-        </div> <!-- s-footer__top -->
-
-        <div class="row h-text-center">
-            <div class="column">
-                <p class="s-contact__email">
-                    <a href="#0">hello <br>
-                        @lautarovolcan <br>.com</a>
-                </p>
-            </div>
+    <!-- Videos -->
+    <section id="videos" class="videos" aria-labelledby="videos-title">
+      <div class="wrap">
+        <div class="mixes__head">
+          <h2 id="videos-title" class="h2">Videos</h2>
+          <p class="mixes__intro" data-i18n="videosIntro">Two sets on camera. Press play on a deck to watch it.</p>
         </div>
 
-    </section>  <!-- end s-contact -->
-
-
-    <!-- footer
-    ================================================== -->
-    <footer class="s-footer">
-        <div class="row row-y-top">
-
-            <div class="column large-8 medium-12">
-                <div class="row">
-                    <!-- <div class="column large-7 tab-12 s-footer__block">
-                        <h4 class="h6">Where to Find Us</h4>
-        
-                        <p>
-                        1600 Amphitheatre Parkway <br>
-                        Mountain View, California <br>
-                        94043  US <br>
-                        <a href="tel:197-543-2345">+197 543 2345</a>
-                        </p>
-                    </div> -->
-        
-                    <div class="column large-5 tab-12 s-footer__block">
-                        <h4 class="h6">Follow Us</h4 class="h6">
-        
-                        <ul class="s-footer__list">
-                            <li><a href="https://www.instagram.com/lautarovolcan/?hl=es-la" target="_blank">Instagram</a></li>
-                            <!-- <li><a href="#0">Youtube</a></li> -->
-                            <li><a href="https://soundcloud.com/lautarovolcan" target="_blank">Soundcloud</a></li>
-                            <!-- <li><a href="#0">Dribbble</a></li> -->
-                        </ul>
-                    </div>
-                </div>
+        <div class="vdecks">
+          <article class="vdeck panel vdeck--1" data-vdeck data-video-id="7vkOglBB7mk" data-video-start="1500" data-video-title="Live session #1">
+            <div class="vdeck__screen" data-vscreen>
+              <button class="vdeck__cover" type="button" data-video-play aria-label="Play Live session #1">
+                <img src="https://i.ytimg.com/vi/7vkOglBB7mk/maxresdefault.jpg" alt="" loading="lazy" data-yt-thumb="7vkOglBB7mk">
+                <span class="vdeck__hud" aria-hidden="true">
+                  <span class="vdeck__num">1</span>
+                  <span class="vdeck__name">Live session #1</span>
+                </span>
+                <span class="vdeck__wave" aria-hidden="true"></span>
+              </button>
             </div>
-
-            <div class="column large-4 medium-12 s-footer__block--end">
-                <a href="mailto:lautaroferrandi@gmail.com" class="btn h-full-width">Let's Talk</a>
-
-                <div class="ss-copyright">
-                    <span>Copyright LF 2024</span> 
-                    <span>Design by <a href="https://www.lautaroferrandi.com/" target="_blank">LautaroFerrandi</a></span>
-                </div>
+            <div class="vdeck__base">
+              <button class="vdeck__play" type="button" data-video-play aria-label="Play Live session #1">
+                <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>
+              </button>
+              <div class="vdeck__meta">
+                <h3 class="vdeck__title">Live session #1</h3>
+                <a class="vdeck__yt" href="https://www.youtube.com/watch?v=7vkOglBB7mk&t=1500s" target="_blank" rel="noopener" data-i18n="watchYt">Watch on YouTube</a>
+              </div>
             </div>
+          </article>
 
-            <div class="ss-go-top">
-                <a class="smoothscroll" title="Back to Top" href="#top">
-                    top
-                </a>
-            </div> <!-- end ss-go-top -->
+          <div class="mixer panel" aria-hidden="true">
+            <div class="mixer__ch mixer__ch--1">
+              <span class="meter"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+              <span class="vfader"><span class="vfader__cap"></span></span>
+            </div>
+            <div class="mixer__ch mixer__ch--2">
+              <span class="meter"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+              <span class="vfader"><span class="vfader__cap"></span></span>
+            </div>
+            <div class="xfader"><span class="xfader__cap"></span></div>
+          </div>
 
+          <article class="vdeck panel vdeck--2" data-vdeck data-video-id="L5LTvuj2zEo" data-video-start="0" data-video-title="Live session #2">
+            <div class="vdeck__screen" data-vscreen>
+              <button class="vdeck__cover" type="button" data-video-play aria-label="Play Live session #2">
+                <img src="https://i.ytimg.com/vi/L5LTvuj2zEo/maxresdefault.jpg" alt="" loading="lazy" data-yt-thumb="L5LTvuj2zEo">
+                <span class="vdeck__hud" aria-hidden="true">
+                  <span class="vdeck__num">2</span>
+                  <span class="vdeck__name">Live session #2</span>
+                </span>
+                <span class="vdeck__wave" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="vdeck__base">
+              <button class="vdeck__play" type="button" data-video-play aria-label="Play Live session #2">
+                <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>
+              </button>
+              <div class="vdeck__meta">
+                <h3 class="vdeck__title">Live session #2</h3>
+                <a class="vdeck__yt" href="https://www.youtube.com/watch?v=L5LTvuj2zEo" target="_blank" rel="noopener" data-i18n="watchYt">Watch on YouTube</a>
+              </div>
+            </div>
+          </article>
         </div>
-    </footer>
-    
+      </div>
+    </section>
 
-    <!-- photoswipe background
-    ================================================== -->
-    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+    <!-- About -->
+    <section id="about" class="about" aria-labelledby="about-title">
+      <div class="wrap about__grid">
+        <figure class="about__photo">
+          <picture>
+            <source type="image/webp" srcset="assets/img/portrait-800.webp 800w, assets/img/portrait-1600.webp 1600w" sizes="(min-width: 900px) 45vw, 100vw">
+            <img src="assets/img/portrait-800.jpg" srcset="assets/img/portrait-800.jpg 800w, assets/img/portrait-1600.jpg 1600w" sizes="(min-width: 900px) 45vw, 100vw"
+                 alt="Portrait of Lautaro in a black turtleneck against a deep teal background, with an orange four-pointed star of light over one eye" data-i18n-attr="alt:aboutAlt" loading="lazy" width="1600" height="1986">
+          </picture>
+        </figure>
 
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
-                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
-                    "Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                            <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div>
-                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
-                "Next (arrow right)"></button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
-
+        <div class="about__text">
+          <h2 id="about-title" class="h2" data-i18n="aboutTitle">I'm Lautaro Ferrandi, and I play as Lautaro Volcan: an Argentine-Spanish DJ based in Barcelona.</h2>
+          <p data-i18n="about1">I'm drawn to tech house, house, techno, nu disco and ambient, and I focus on building atmospheres that connect with the room. I pick tracks for their groove, their vocals and their rhythmic patterns, and dig into what makes each one work to build sets people share together.</p>
+          <p data-i18n="about2">I like sets that move across styles. I've played clubs and events in different countries, reading each crowd and each venue as it comes.</p>
+          <p data-i18n="about3">Ambient is where the introspective side comes in: it lets me fold quieter, emotional passages into a mix without losing the floor.</p>
+          <ul class="tags" aria-label="Genres" data-i18n-attr="aria-label:genres">
+            <li>Tech house</li><li>House</li><li>Techno</li><li>Nu disco</li><li>Ambient</li>
+          </ul>
         </div>
+      </div>
+    </section>
 
-    </div> <!-- end photoSwipe background -->
+    <!-- Booking -->
+    <section id="booking" class="booking" aria-labelledby="booking-title">
+      <div class="wrap">
+        <h2 id="booking-title" class="h2" data-i18n="bookingTitle">Bookings, collaborations and press</h2>
+        <a class="booking__mail" href="mailto:lautaroferrandi@gmail.com">lautaroferrandi@gmail.com</a>
+        <div class="presskit">
+          <a class="btn btn--solid" href="assets/presskit/LautaroVolcan-PressKit-EN.pdf" download data-i18n="pkMain" data-i18n-attr="href:pkMainHref">Download press kit</a>
+          <a class="btn" href="assets/presskit/LautaroVolcan-PressKit-ES.pdf" download data-i18n="pkAlt" data-i18n-attr="href:pkAltHref;lang:pkAltLang" lang="es">Press kit en español</a>
+        </div>
+        <ul class="links">
+          <li><a href="https://www.instagram.com/lautarovolcan/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://soundcloud.com/lautarovolcan" target="_blank" rel="noopener">SoundCloud</a></li>
+          <li><a href="https://www.youtube.com/watch?v=7vkOglBB7mk" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__row">
+      <p>© <span data-year>2026</span> Lautaro Volcan. <span data-i18n="rights">All rights reserved.</span></p>
+      <p><span data-i18n="builtBy">Designed and built by</span> <a href="https://www.lautaroferrandi.com/" target="_blank" rel="noopener">Lautaro Ferrandi</a>.</p>
+    </div>
+  </footer>
 
 
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+  <!-- Video player: opens over the page. YouTube runs underneath with its own controls hidden. -->
+  <dialog class="vplayer" data-vplayer aria-labelledby="vplayer-title">
+    <div class="vplayer__panel panel" data-vp-panel>
+      <div class="vplayer__top">
+        <p class="vplayer__title" id="vplayer-title">
+          <span class="vdeck__num" data-vp-num aria-hidden="true">1</span>
+          <span data-vp-title>Live session #1</span>
+        </p>
+        <button class="vplayer__close" type="button" data-vp-close data-i18n="close">Close</button>
+      </div>
 
+      <div class="vplayer__screen" data-vp-screen>
+        <div class="vplayer__frame"><div data-vp-frame></div></div>
+        <button class="vplayer__hit" type="button" data-vp-toggle aria-label="Play" tabindex="-1"></button>
+        <span class="vplayer__big" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span>
+        <p class="vplayer__msg" data-vp-msg hidden></p>
+      </div>
+
+      <div class="vplayer__bar">
+        <button class="ctl ctl--play" type="button" data-vp-play aria-label="Play">
+          <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>
+          <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+        </button>
+        <p class="vplayer__time"><span data-vp-cur>0:00</span><span class="vplayer__sep">/</span><span data-vp-dur>0:00</span></p>
+        <div class="wave vplayer__wave" data-vp-wave role="slider" tabindex="0" aria-label="Position in the video" data-i18n-attr="aria-label:videoPos"
+             aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <canvas data-vp-canvas></canvas>
+          <span class="wave__hover" data-vp-hover aria-hidden="true"></span>
+        </div>
+        <label class="fader">
+          <span class="sr" data-i18n="volume">Volume</span>
+          <input type="range" min="0" max="100" value="80" data-vp-vol>
+        </label>
+        <button class="ctl" type="button" data-vp-fs aria-label="Full screen" data-i18n-attr="aria-label:fullscreen">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v2H6v4H4zM14 4h6v6h-2V6h-4zM4 14h2v4h4v2H4zM18 14h2v6h-6v-2h4z"/></svg>
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
-
 </html>

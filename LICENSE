@@ -1,0 +1,18 @@
+Copyright (c) 2024-2026 Lautaro Ferrandi (Lautaro Volcan). All rights reserved.
+
+The source code, design, text, photographs, logo and audio links in this
+repository are the property of Lautaro Ferrandi. No part of this website may be
+copied, reproduced, modified, redistributed or used in other projects without
+prior written permission.
+
+Contact: lautaroferrandi@gmail.com
+
+-------------------------------------------------------------------------------
+Third-party components, used under their own licenses:
+
+- Fonts in assets/fonts (Unbounded, Hanken Grotesk) are licensed under
+  the SIL Open Font License 1.1. TeX Gyre Heros is licensed under the GUST
+  Font License. Their license texts are in assets/fonts/.
+- Audio is streamed through SoundCloud's embedded player and Widget API,
+  subject to SoundCloud's terms. Mixes remain hosted on soundcloud.com.
+- The video is embedded from YouTube.
