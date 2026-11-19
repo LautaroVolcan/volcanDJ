@@ -15,17 +15,6 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "presskit"
 SITE = "https://lautarovolcan.github.io/volcanDJ/"
 
-MIXES = [
-    ("Tech House #1", {"en": "Tech house", "es": "Tech house"}, "https://soundcloud.com/lautarovolcan/tech-house-1"),
-    ("Melodic House #1", {"en": "Melodic house", "es": "Melodic house"}, "https://soundcloud.com/lautarovolcan/melodic-house-1"),
-    ("Deep House #2", {"en": "Deep house", "es": "Deep house"}, "https://soundcloud.com/lautarovolcan/deep-house-2"),
-    ("Deep House #1", {"en": "Deep house", "es": "Deep house"}, "https://soundcloud.com/lautarovolcan/deep-house-session-1"),
-]
-VIDEOS = [
-    ("Live session #1", "https://www.youtube.com/watch?v=7vkOglBB7mk&t=1500s", "youtube.com/watch?v=7vkOglBB7mk"),
-    ("Live session #2", "https://www.youtube.com/watch?v=L5LTvuj2zEo", "youtube.com/watch?v=L5LTvuj2zEo"),
-]
-
 T = {
     "en": {
         "lang": "en",
@@ -43,10 +32,6 @@ T = {
             "I like sets that move across styles. I've played clubs and events in different countries, reading each crowd and each venue as it comes.",
             "Ambient is where the introspective side comes in: it lets me fold quieter, emotional passages into a mix without losing the floor.",
         ],
-        "listen": "Listen and watch",
-        "mixes": "Mixes on SoundCloud",
-        "videos": "Sets on video",
-        "scan": "Scan or tap to open",
         "book": "Bookings",
         "book_lede": "For bookings, collaborations and press, write to:",
         "links": "Find me",
@@ -70,10 +55,6 @@ T = {
             "Me gustan los sets que cruzan estilos. He tocado en clubes y eventos de distintos países, leyendo cada público y cada espacio.",
             "El ambient es mi lado más introspectivo: me permite sumar pasajes más tranquilos y emotivos a una mezcla sin perder la pista.",
         ],
-        "listen": "Escuchar y ver",
-        "mixes": "Mixes en SoundCloud",
-        "videos": "Sets en video",
-        "scan": "Escanea o toca para abrir",
         "book": "Contrataciones",
         "book_lede": "Para contrataciones, colaboraciones y prensa, escríbeme a:",
         "links": "Dónde encontrarme",
@@ -91,20 +72,6 @@ def qr(url: str) -> str:
 def build_html(lang: str) -> str:
     t = T[lang]
     tpl = (ROOT / "presskit" / "template.html").read_text(encoding="utf-8")
-    mixes = "\n".join(
-        f'''<a class="card gloss" href="{url}">
-              <span class="qr">{qr(url)}</span>
-              <span class="card__txt"><strong>{title}</strong><span>{genre[lang]}</span><em>{url.replace("https://", "")}</em></span>
-            </a>'''
-        for title, genre, url in MIXES
-    )
-    videos = "\n".join(
-        f'''<a class="card gloss" href="{url}">
-              <span class="qr">{qr(url)}</span>
-              <span class="card__txt"><strong>{title}</strong><span>YouTube</span><em>{short}</em></span>
-            </a>'''
-        for title, url, short in VIDEOS
-    )
     repl = {
         "{{lang}}": t["lang"],
         "{{kicker}}": t["kicker"],
@@ -115,12 +82,6 @@ def build_html(lang: str) -> str:
         "{{short}}": t["short"],
         "{{long_label}}": t["long_label"],
         "{{long}}": "".join(f"<p>{p}</p>" for p in t["long"]),
-        "{{listen}}": t["listen"],
-        "{{mixes_title}}": t["mixes"],
-        "{{videos_title}}": t["videos"],
-        "{{scan}}": t["scan"],
-        "{{mixes}}": mixes,
-        "{{videos}}": videos,
         "{{book}}": t["book"],
         "{{book_lede}}": t["book_lede"],
         "{{links}}": t["links"],
