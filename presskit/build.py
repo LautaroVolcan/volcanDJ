@@ -13,7 +13,7 @@ from playwright.async_api import async_playwright
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "presskit"
-SITE = "https://lautarovolcan.github.io/volcanDJ/"
+SITE = "https://volcan.lautaroferrandi.com/"
 
 T = {
     "en": {
