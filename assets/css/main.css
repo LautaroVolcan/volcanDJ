@@ -499,7 +499,7 @@ button { font: inherit; color: inherit; }
 .about { padding: var(--section) 0; background: linear-gradient(180deg, var(--oxblood), #250D11 50%, var(--oxblood)); }
 .about__grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(2rem, 6vw, 5rem); align-items: start; }
 .about__photo { margin: 0; position: sticky; top: 6rem; border-radius: 1.25rem; overflow: hidden; aspect-ratio: 4 / 5; }
-.about__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 42% 40%; }
+.about__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
 .about__text { max-width: 36rem; font-family: var(--helvetica); }
 .about .h2 { font: 700 clamp(1.6rem, 3.2vw, 2.6rem)/1.1 var(--helvetica); letter-spacing: -.025em; }
 .about__text p { margin: 0 0 1.1rem; color: #E6CBC1; }
@@ -536,7 +536,7 @@ button { font: inherit; color: inherit; }
   .vdecks { grid-template-columns: 1fr; }
   .mixer { display: none; }
   .about__grid { grid-template-columns: 1fr; }
-  .about__photo { position: static; aspect-ratio: 16 / 10; }
+  .about__photo { position: static; aspect-ratio: 4 / 5; max-width: 32rem; }
 }
 @media (max-width: 760px) {
   .deck { grid-template-columns: 1fr; }
