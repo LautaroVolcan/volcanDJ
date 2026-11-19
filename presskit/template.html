@@ -62,9 +62,12 @@
   .about__grid { display: grid; grid-template-columns: 1fr; gap: 9mm; }
   .short { padding: 8mm 9mm; }
   .short p { margin: 0; font: 400 14.5pt/1.42 var(--sans); }
-  .long p { margin: 0 0 4mm; font: 400 12pt/1.55 var(--sans); color: #E6CBC1; max-width: 170mm; }
-  .about__photo { height: 92mm; margin-top: 1mm; }
-  .about__photo img { object-position: 42% 38%; }
+  .about__row { display: grid; grid-template-columns: 1fr 74mm; gap: 9mm; align-items: start; }
+  .long p { margin: 0 0 4mm; font: 400 11.5pt/1.55 var(--sans); color: #E6CBC1; }
+  .about__photo { height: 92mm; margin-top: 7mm; }
+  .about__photo img { object-position: 50% 28%; }
+  .about__wide { height: 62mm; }
+  .about__wide img { object-position: 45% 0%; }
 
   .qr { flex: none; display: block; padding: 2.2mm; border-radius: 2.5mm; background: var(--text); }
   .qr svg { width: 100%; height: 100%; display: block; }
@@ -78,9 +81,11 @@
   .site { text-align: center; padding: 4mm; }
   .site .qr { width: 100%; height: auto; aspect-ratio: 1; }
   .site p { margin: 3mm 0 0; font: 400 8pt var(--sans); color: var(--muted); }
-  .photos { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+  .photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; }
   .photos .bezel { height: 74mm; }
-  .photos .bezel:first-child img { object-position: 36% 30%; }
+  .photos .bezel:nth-child(1) img { object-position: 50% 28%; }
+  .photos .bezel:nth-child(2) img { object-position: 30% 30%; }
+  .photos .bezel:nth-child(3) img { object-position: 42% 40%; }
 </style>
 </head>
 <body>
@@ -105,11 +110,14 @@
       <p class="label">{{short_label}}</p>
       <div class="short panel"><p>{{short}}</p></div>
     </div>
-    <div class="long">
-      <p class="label">{{long_label}}</p>
-      {{long}}
+    <div class="about__row">
+      <div class="long">
+        <p class="label">{{long_label}}</p>
+        {{long}}
+      </div>
+      <div class="about__photo bezel"><img src="../assets/img/portrait-1600.jpg" alt=""></div>
     </div>
-    <div class="about__photo bezel"><img src="../assets/img/about-1920.jpg" alt=""></div>
+    <div class="about__wide bezel"><img src="../assets/img/about-1920.jpg" alt=""></div>
   </div>
   <div class="foot"><span class="mark"><span class="dot"></span>Lautaro Volcan</span><span>lautaroferrandi@gmail.com</span></div>
 </section>
@@ -134,6 +142,7 @@
   </div>
   <p class="sub">{{photos}}</p>
   <div class="photos">
+    <div class="bezel"><img src="../assets/img/portrait-1600.jpg" alt=""></div>
     <div class="bezel"><img src="../assets/img/hero-1920.jpg" alt=""></div>
     <div class="bezel"><img src="../assets/img/about-1920.jpg" alt=""></div>
   </div>
