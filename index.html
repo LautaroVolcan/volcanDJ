@@ -72,7 +72,7 @@
           <p class="mixes__intro">Recorded sessions from the booth. Pick one from the crate and it loads on the deck.</p>
         </div>
 
-        <div class="deck" data-deck>
+        <div class="deck gloss" data-deck>
           <div class="deck__platter-wrap">
             <div class="platter" data-platter>
               <div class="platter__label">
@@ -182,22 +182,26 @@
       <div class="wrap">
         <div class="mixes__head">
           <h2 id="videos-title" class="h2">Videos</h2>
-          <p class="mixes__intro">Two sets on camera. Press a deck to watch it here.</p>
+          <p class="mixes__intro">Two sets on camera. Press play on a deck to watch it.</p>
         </div>
 
         <div class="vdecks">
-          <article class="vdeck vdeck--1">
-            <button class="vdeck__screen" type="button" data-video-open data-video-id="7vkOglBB7mk" data-video-start="1500" data-video-title="Live session #1">
-              <img src="https://i.ytimg.com/vi/7vkOglBB7mk/maxresdefault.jpg" alt="" loading="lazy" data-yt-thumb="7vkOglBB7mk">
-              <span class="vdeck__hud" aria-hidden="true">
-                <span class="vdeck__num">1</span>
-                <span class="vdeck__name">Live session #1</span>
-              </span>
-              <span class="vdeck__wave" aria-hidden="true"></span>
-              <span class="sr">Play Live session #1</span>
-            </button>
+          <article class="vdeck gloss vdeck--1" data-vdeck data-video-id="7vkOglBB7mk" data-video-start="1500" data-video-title="Live session #1">
+            <div class="vdeck__screen" data-vscreen>
+              <button class="vdeck__cover" type="button" data-video-play aria-label="Play Live session #1">
+                <img src="https://i.ytimg.com/vi/7vkOglBB7mk/maxresdefault.jpg" alt="" loading="lazy" data-yt-thumb="7vkOglBB7mk">
+                <span class="vdeck__hud" aria-hidden="true">
+                  <span class="vdeck__num">1</span>
+                  <span class="vdeck__name">Live session #1</span>
+                </span>
+                <span class="vdeck__wave" aria-hidden="true"></span>
+              </button>
+            </div>
             <div class="vdeck__base">
-              <span class="vdeck__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span>
+              <button class="vdeck__play" type="button" data-video-play aria-label="Play Live session #1">
+                <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>
+                <svg class="i-stop" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h12v12H6z"/></svg>
+              </button>
               <div class="vdeck__meta">
                 <h3 class="vdeck__title">Live session #1</h3>
                 <a class="vdeck__yt" href="https://www.youtube.com/watch?v=7vkOglBB7mk&t=1500s" target="_blank" rel="noopener">Watch on YouTube</a>
@@ -205,7 +209,7 @@
             </div>
           </article>
 
-          <div class="mixer" aria-hidden="true">
+          <div class="mixer gloss" aria-hidden="true">
             <div class="mixer__ch mixer__ch--1">
               <span class="meter"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
               <span class="vfader"><span class="vfader__cap"></span></span>
@@ -217,18 +221,22 @@
             <div class="xfader"><span class="xfader__cap"></span></div>
           </div>
 
-          <article class="vdeck vdeck--2">
-            <button class="vdeck__screen" type="button" data-video-open data-video-id="L5LTvuj2zEo" data-video-start="0" data-video-title="Live session #2">
-              <img src="https://i.ytimg.com/vi/L5LTvuj2zEo/maxresdefault.jpg" alt="" loading="lazy" data-yt-thumb="L5LTvuj2zEo">
-              <span class="vdeck__hud" aria-hidden="true">
-                <span class="vdeck__num">2</span>
-                <span class="vdeck__name">Live session #2</span>
-              </span>
-              <span class="vdeck__wave" aria-hidden="true"></span>
-              <span class="sr">Play Live session #2</span>
-            </button>
+          <article class="vdeck gloss vdeck--2" data-vdeck data-video-id="L5LTvuj2zEo" data-video-start="0" data-video-title="Live session #2">
+            <div class="vdeck__screen" data-vscreen>
+              <button class="vdeck__cover" type="button" data-video-play aria-label="Play Live session #2">
+                <img src="https://i.ytimg.com/vi/L5LTvuj2zEo/maxresdefault.jpg" alt="" loading="lazy" data-yt-thumb="L5LTvuj2zEo">
+                <span class="vdeck__hud" aria-hidden="true">
+                  <span class="vdeck__num">2</span>
+                  <span class="vdeck__name">Live session #2</span>
+                </span>
+                <span class="vdeck__wave" aria-hidden="true"></span>
+              </button>
+            </div>
             <div class="vdeck__base">
-              <span class="vdeck__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span>
+              <button class="vdeck__play" type="button" data-video-play aria-label="Play Live session #2">
+                <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>
+                <svg class="i-stop" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h12v12H6z"/></svg>
+              </button>
               <div class="vdeck__meta">
                 <h3 class="vdeck__title">Live session #2</h3>
                 <a class="vdeck__yt" href="https://www.youtube.com/watch?v=L5LTvuj2zEo" target="_blank" rel="noopener">Watch on YouTube</a>
@@ -284,13 +292,6 @@
     </div>
   </footer>
 
-  <dialog class="video" data-video>
-    <form method="dialog" class="video__bar">
-      <p data-video-heading>Live set</p>
-      <button class="video__close" type="submit" aria-label="Close video">Close</button>
-    </form>
-    <div class="video__frame" data-video-frame></div>
-  </dialog>
 
   <script src="assets/js/main.js" defer></script>
 </body>

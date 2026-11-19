@@ -20,28 +20,34 @@
   addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  // Video dialog (YouTube, privacy-enhanced domain). Iframe is created on open and removed on close.
-  const dialog = $("[data-video]");
-  const frame = $("[data-video-frame]");
-  const dialogTitle = $("[data-video-heading]");
-  $$("[data-video-open]").forEach((btn) =>
-    btn.addEventListener("click", () => {
-      const id = btn.dataset.videoId;
-      const start = Number(btn.dataset.videoStart || 0);
-      const title = btn.dataset.videoTitle || "Live set";
-      if (!dialog || typeof dialog.showModal !== "function") {
-        window.open(`https://www.youtube.com/watch?v=${id}${start ? `&t=${start}s` : ""}`, "_blank", "noopener");
-        return;
-      }
-      if (player) player.pause();
-      frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?start=${start}&autoplay=1&rel=0"
-        title="${title}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
-      if (dialogTitle) dialogTitle.textContent = title;
-      dialog.showModal();
-    })
+  // Video decks: the YouTube player loads inside the deck screen when you press play.
+  const vdecks = $$("[data-vdeck]");
+  function stopVideos(except) {
+    vdecks.forEach((d) => {
+      if (d === except) return;
+      $("iframe", d)?.remove();
+      d.classList.remove("is-live");
+      $$("[data-video-play]", d).forEach((b) => b.setAttribute("aria-label", `Play ${d.dataset.videoTitle}`));
+    });
+  }
+  function startVideo(d) {
+    stopVideos(d);
+    if (player) player.pause();
+    const { videoId: id, videoStart: start = 0, videoTitle: title } = d.dataset;
+    const iframe = document.createElement("iframe");
+    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&start=${start}&playsinline=1&rel=0&modestbranding=1`;
+    iframe.title = title;
+    iframe.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+    iframe.allowFullscreen = true;
+    $("[data-vscreen]", d).appendChild(iframe);
+    d.classList.add("is-live");
+    $$("[data-video-play]", d).forEach((b) => b.setAttribute("aria-label", `Stop ${title}`));
+  }
+  vdecks.forEach((d) =>
+    $$("[data-video-play]", d).forEach((btn) =>
+      btn.addEventListener("click", () => (d.classList.contains("is-live") ? stopVideos() : startVideo(d)))
+    )
   );
-  dialog?.addEventListener("close", () => (frame.innerHTML = ""));
-  dialog?.addEventListener("click", (e) => { if (e.target === dialog) dialog.close(); });
 
   // YouTube serves a tiny grey placeholder when a video has no max-res thumbnail; fall back to the HQ one.
   $$("[data-yt-thumb]").forEach((img) => {
@@ -332,6 +338,7 @@
     });
 
     w.bind(E.PLAY, () => {
+      stopVideos();
       // If someone pressed play on a visible fallback widget, follow it.
       if (t !== cur) select(t.i, false);
       tracks.forEach((o) => o !== t && o.ready && o.widget.pause());
