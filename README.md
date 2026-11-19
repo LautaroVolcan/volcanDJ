@@ -1,6 +1,7 @@
 # Lautaro Volcan — DJ website
 
-Personal site for Lautaro Volcan: mixes, bio and booking contact.
+Personal site for Lautaro Volcan: mixes, videos, bio and booking contact.
+Live at https://volcan.lautaroferrandi.com (GitHub Pages, DNS on Cloudflare).
 Designed and built by Lautaro Ferrandi. All rights reserved (see `LICENSE`).
 
 Plain HTML, CSS and JavaScript. No build step and no dependencies.
