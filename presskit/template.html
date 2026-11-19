@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<title>Lautaro Volcan — {{kicker}}</title>
+<!-- Press kit template. Design © Lautaro Ferrandi. Build with presskit/build.py -->
+<style>
+  @font-face { font-family: "Unbounded"; src: url("../assets/fonts/unbounded-latin-wght-normal.woff2") format("woff2"); font-weight: 200 900; }
+  @font-face { font-family: "Doto"; src: url("../assets/fonts/doto-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; }
+  @font-face { font-family: "Heros"; src: url("../assets/fonts/texgyreheros-regular.woff2") format("woff2"); font-weight: 400; }
+  @font-face { font-family: "Heros"; src: url("../assets/fonts/texgyreheros-bold.woff2") format("woff2"); font-weight: 700; }
+
+  :root {
+    --oxblood: #1C0A0C; --wine: #36121A; --volcan: #B23730; --amber: #F0A04B; --text: #F3DDD4; --muted: #C7A49A;
+    --line: rgba(243,221,212,.18);
+    --chrome: linear-gradient(145deg, #FFF3EE 0%, #A48C86 12%, #2E1B1C 30%, #7A625D 47%, #FBEAE3 58%, #3B2627 74%, #C6AFA9 90%, #FFF3EE 100%);
+    --lacquer: linear-gradient(165deg, #3E151C 0%, #1E0A0D 48%, #0F0506 100%);
+    --display: "Unbounded", sans-serif;
+    --sans: "Heros", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--oxblood); color: var(--text); font-family: var(--sans); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: inherit; text-decoration: none; }
+
+  .page {
+    position: relative; width: 210mm; height: 297mm; overflow: hidden;
+    padding: 16mm 15mm 0; page-break-after: always; break-after: page;
+    background: radial-gradient(120% 60% at 100% 0%, rgba(178,55,48,.22), transparent 60%), var(--oxblood);
+  }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+
+  .foot {
+    position: absolute; left: 15mm; right: 15mm; bottom: 10mm;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 8.5pt; color: var(--muted); border-top: .3mm solid var(--line); padding-top: 3mm;
+  }
+  .mark { display: inline-flex; align-items: center; gap: 2mm; font: 600 8.5pt var(--display); color: var(--text); }
+  .dot { width: 3mm; height: 3mm; border-radius: 50%; background: var(--volcan); }
+
+  .h { font: 800 15mm/0.92 var(--display); letter-spacing: -.045em; text-transform: uppercase; margin: 0 0 8mm; }
+  .sub { font: 700 14pt/1.2 var(--sans); margin: 0 0 5mm; }
+  .label { font: 400 10pt/1.3 var(--sans); color: var(--muted); margin: 0 0 3mm; }
+
+  .gloss {
+    position: relative; border: .6mm solid transparent; border-radius: 6mm;
+    background: var(--lacquer) padding-box, var(--chrome) border-box;
+    box-shadow: inset 0 .3mm 0 rgba(255,240,234,.5), 0 6mm 12mm -6mm rgba(0,0,0,.9);
+  }
+  .gloss::before {
+    content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+    background: radial-gradient(90% 60% at 18% 0%, rgba(255,236,228,.18), transparent 60%), linear-gradient(115deg, rgba(255,236,228,.09) 0 18%, transparent 34%);
+  }
+  .bezel { border: .6mm solid transparent; background: #0C0304 padding-box, var(--chrome) border-box; border-radius: 5mm; overflow: hidden; }
+  .bezel img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  /* ---- Cover ---- */
+  .cover { padding: 0; }
+  .cover__photo { position: absolute; inset: 0 0 auto; height: 200mm; }
+  .cover__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 36% 30%; }
+  .cover__photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, var(--oxblood) 0%, rgba(28,10,12,.7) 26%, rgba(28,10,12,0) 55%, rgba(28,10,12,.5) 100%); }
+  .cover__top { position: absolute; top: 14mm; left: 15mm; right: 15mm; display: flex; justify-content: space-between; align-items: center; font: 700 10pt var(--sans); }
+  .cover__body { position: absolute; left: 15mm; right: 15mm; bottom: 26mm; }
+  .cover__name { margin: 0; font: 800 26.5mm/0.86 var(--display); letter-spacing: -.05em; text-transform: uppercase; }
+  .cover__role { margin: 8mm 0 3mm; font: 700 15pt/1.2 var(--sans); }
+  .genres { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; font: 700 11pt/1.4 var(--sans); color: var(--amber); }
+  .genres li:not(:last-child)::after { content: "/"; margin: 0 2.5mm; color: rgba(243,221,212,.3); }
+
+  /* ---- About ---- */
+  .about__grid { display: grid; grid-template-columns: 1fr; gap: 9mm; }
+  .short { padding: 8mm 9mm; }
+  .short p { margin: 0; font: 400 14.5pt/1.42 var(--sans); }
+  .long p { margin: 0 0 4mm; font: 400 12pt/1.55 var(--sans); color: #E6CBC1; max-width: 170mm; }
+  .about__photo { height: 92mm; margin-top: 1mm; }
+  .about__photo img { object-position: 42% 38%; }
+
+  /* ---- Listen ---- */
+  .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6mm; margin-bottom: 13mm; }
+  .card { display: flex; align-items: center; gap: 5mm; padding: 6mm; border-radius: 7mm; }
+  .qr { flex: none; width: 30mm; height: 30mm; padding: 2.2mm; border-radius: 2.5mm; background: var(--text); display: block; }
+  .qr svg { width: 100%; height: 100%; display: block; }
+  .card__txt { display: grid; gap: 1mm; min-width: 0; }
+  .card__txt strong { font: 700 11pt/1.15 var(--display); white-space: nowrap; letter-spacing: -.01em; }
+  .card__txt span { font: 400 11pt var(--sans); color: var(--amber); }
+  .card__txt em { font: 400 8.5pt/1.3 var(--sans); font-style: normal; color: var(--muted); overflow-wrap: anywhere; }
+  .hint { font: 400 10pt var(--sans); color: var(--muted); margin: -7mm 0 0; }
+
+  /* ---- Booking ---- */
+  .mail { display: block; font: 700 12.6mm/1 var(--sans); letter-spacing: -.045em; margin: 2mm 0 14mm; white-space: nowrap; }
+  .book__grid { display: grid; grid-template-columns: 1fr 48mm; gap: 9mm; align-items: start; margin-bottom: 14mm; }
+  .links { list-style: none; padding: 0; margin: 0; border-top: .3mm solid var(--line); }
+  .links li { display: grid; grid-template-columns: 32mm 1fr; padding: 4.4mm 0; border-bottom: .3mm solid var(--line); font: 400 12pt var(--sans); }
+  .links li span { color: var(--muted); }
+  .site { text-align: center; padding: 4mm; }
+  .site .qr { width: 100%; height: auto; aspect-ratio: 1; }
+  .site p { margin: 3mm 0 0; font: 400 8pt var(--sans); color: var(--muted); }
+  .photos { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+  .photos .bezel { height: 74mm; }
+  .photos .bezel:first-child img { object-position: 36% 30%; }
+</style>
+</head>
+<body>
+
+<!-- 1. Cover -->
+<section class="page cover">
+  <div class="cover__photo"><img src="../assets/img/hero-1920.jpg" alt=""></div>
+  <div class="cover__top"><span class="mark"><span class="dot"></span>Lautaro Volcan</span><span>{{kicker}} 2026</span></div>
+  <div class="cover__body">
+    <h1 class="cover__name">Lautaro<br>Volcan</h1>
+    <p class="cover__role">{{role}}</p>
+    <ul class="genres">{{genres}}</ul>
+  </div>
+  <div class="foot"><span>lautaroferrandi@gmail.com</span><span>@lautarovolcan</span></div>
+</section>
+
+<!-- 2. About -->
+<section class="page">
+  <h2 class="h">{{about}}</h2>
+  <div class="about__grid">
+    <div>
+      <p class="label">{{short_label}}</p>
+      <div class="short gloss"><p>{{short}}</p></div>
+    </div>
+    <div class="long">
+      <p class="label">{{long_label}}</p>
+      {{long}}
+    </div>
+    <div class="about__photo bezel"><img src="../assets/img/about-1920.jpg" alt=""></div>
+  </div>
+  <div class="foot"><span class="mark"><span class="dot"></span>Lautaro Volcan</span><span>lautaroferrandi@gmail.com</span></div>
+</section>
+
+<!-- 3. Listen and watch -->
+<section class="page">
+  <h2 class="h">{{listen}}</h2>
+  <p class="sub">{{mixes_title}}</p>
+  <div class="cards">{{mixes}}</div>
+  <p class="sub">{{videos_title}}</p>
+  <div class="cards">{{videos}}</div>
+  <p class="hint">{{scan}}</p>
+  <div class="foot"><span class="mark"><span class="dot"></span>Lautaro Volcan</span><span>soundcloud.com/lautarovolcan</span></div>
+</section>
+
+<!-- 4. Booking -->
+<section class="page">
+  <h2 class="h">{{book}}</h2>
+  <p class="label" style="font-size:11pt">{{book_lede}}</p>
+  <a class="mail" href="mailto:lautaroferrandi@gmail.com">lautaroferrandi@gmail.com</a>
+  <div class="book__grid">
+    <div>
+      <p class="sub">{{links}}</p>
+      <ul class="links">
+        <li><span>Instagram</span><a href="https://www.instagram.com/lautarovolcan/">@lautarovolcan</a></li>
+        <li><span>SoundCloud</span><a href="https://soundcloud.com/lautarovolcan">soundcloud.com/lautarovolcan</a></li>
+        <li><span>YouTube</span><a href="https://www.youtube.com/watch?v=7vkOglBB7mk">youtube.com/watch?v=7vkOglBB7mk</a></li>
+        <li><span>{{website}}</span><a href="{{site}}">{{site_short}}</a></li>
+      </ul>
+    </div>
+    <a class="site gloss" href="{{site}}"><span class="qr">{{site_qr}}</span><p>{{website}}</p></a>
+  </div>
+  <p class="sub">{{photos}}</p>
+  <div class="photos">
+    <div class="bezel"><img src="../assets/img/hero-1920.jpg" alt=""></div>
+    <div class="bezel"><img src="../assets/img/about-1920.jpg" alt=""></div>
+  </div>
+  <p class="label" style="margin-top:3mm">{{photos_note}}</p>
+  <div class="foot"><span class="mark"><span class="dot"></span>Lautaro Volcan</span><span>© 2026 Lautaro Volcan</span></div>
+</section>
+
+</body>
+</html>

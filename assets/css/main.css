@@ -29,6 +29,17 @@
   font-display: swap;
 }
 
+@font-face { /* TeX Gyre Heros: free Helvetica clone, used where Helvetica isn't installed (GUST license) */
+  font-family: "Heros";
+  src: url("../fonts/texgyreheros-regular.woff2") format("woff2");
+  font-weight: 400; font-display: swap;
+}
+@font-face {
+  font-family: "Heros";
+  src: url("../fonts/texgyreheros-bold.woff2") format("woff2");
+  font-weight: 700; font-display: swap;
+}
+
 /* ---------- Tokens ---------- */
 :root {
   --oxblood: #1C0A0C;   /* page base: the room with the lights off */
@@ -50,7 +61,7 @@
   --lacquer: linear-gradient(165deg, #3E151C 0%, #1E0A0D 48%, #0F0506 100%);
   --lacquer-red: radial-gradient(circle at 34% 24%, #F08A80 0%, #C9433B 26%, #B23730 46%, #6A1914 100%);
   --gloss-shadow: inset 0 1px 0 rgba(255,240,234,.55), inset 0 -1px 0 rgba(255,240,234,.12), 0 30px 60px -28px rgba(0,0,0,.95);
-  --helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --helvetica: "Helvetica Neue", Helvetica, "Heros", Arial, sans-serif;
 
   --wrap: 72rem;
   --gutter: clamp(1.25rem, 4vw, 3rem);
@@ -462,12 +473,19 @@ button { font: inherit; color: inherit; }
 .booking .h2 { color: var(--muted); font: 500 clamp(1.1rem, 2vw, 1.4rem)/1.3 var(--helvetica); letter-spacing: 0; }
 .booking__mail {
   display: inline-block;
-  font: 700 clamp(1.5rem, 6.4vw, 5.4rem)/1.05 var(--helvetica); letter-spacing: -.045em;
+  font: 700 clamp(1.4rem, 5.6vw, 4.4rem)/1.05 var(--helvetica); letter-spacing: -.045em; white-space: nowrap;
   text-decoration: none; overflow-wrap: anywhere;
   background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat;
   transition: background-size .35s, color .2s;
 }
 .booking__mail:hover { background-size: 100% 2px; }
+.presskit { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2.5rem; }
+.btn--gloss {
+  border: 2px solid transparent; color: var(--text);
+  background: var(--lacquer-red) padding-box, var(--chrome) border-box;
+  box-shadow: inset 0 1px 0 rgba(255,240,234,.5), 0 8px 18px -8px rgba(0,0,0,.9);
+}
+.btn--gloss:hover { background: var(--lacquer-red) padding-box, var(--chrome) border-box; color: var(--text); filter: brightness(1.12); }
 .links { list-style: none; padding: 0; margin: 2.5rem 0 0; display: flex; flex-wrap: wrap; gap: .75rem; }
 .links a {
   display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0 1.2rem;
@@ -500,7 +518,7 @@ button { font: inherit; color: inherit; }
 @media (max-width: 520px) {
   .top__mark span:last-child { display: none; }
   .hero__name { font-size: clamp(2.4rem, 14vw, 5rem); }
-  .booking__mail { font-size: 6.2vw; overflow-wrap: normal; white-space: nowrap; }
+  .booking__mail { font-size: 5.8vw; overflow-wrap: normal; }
 }
 
 @media (prefers-reduced-motion: reduce) {

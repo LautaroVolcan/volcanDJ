@@ -11,7 +11,8 @@ Contact: lautaroferrandi@gmail.com
 Third-party components, used under their own licenses:
 
 - Fonts in assets/fonts (Unbounded, Hanken Grotesk, Doto) are licensed under
-  the SIL Open Font License 1.1. Their license texts are in assets/fonts/.
+  the SIL Open Font License 1.1. TeX Gyre Heros is licensed under the GUST
+  Font License. Their license texts are in assets/fonts/.
 - Audio is streamed through SoundCloud's embedded player and Widget API,
   subject to SoundCloud's terms. Mixes remain hosted on soundcloud.com.
 - The video is embedded from YouTube.

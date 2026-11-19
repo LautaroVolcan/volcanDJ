@@ -11,6 +11,8 @@ assets/css/main.css   styles
 assets/js/main.js     header, video dialog and the custom SoundCloud player
 assets/fonts/         self-hosted fonts (SIL OFL)
 assets/img/           photos and icons
+assets/presskit/      press kit PDFs (EN, ES) linked from the Booking section
+presskit/             source of the press kit (template + build script)
 ```
 
 ## Adding a mix
@@ -30,3 +32,12 @@ Duration, artwork and waveform are read from SoundCloud automatically.
 python3 -m http.server 8000
 ```
 Then open http://localhost:8000.
+
+## Press kit
+
+The PDFs are generated from `presskit/template.html`. Texts, mixes and videos live in `presskit/build.py`.
+
+```
+pip install playwright segno && playwright install chromium
+python3 presskit/build.py
+```
