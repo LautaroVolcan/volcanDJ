@@ -1,0 +1,72 @@
+{
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-23T09:41:55.991Z",
+        "reason": "critique Assessment B: .btn--solid:hover sets oxblood text (0,2,0 beats a:hover 0,1,1); real hover is #1C0A0C on #F0A04B"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-23T09:41:56.002Z",
+        "reason": "critique Assessment B: img[data-art] is hidden until main.js sets src from SoundCloud artwork; LV fallback shows otherwise"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-23T09:41:56.013Z",
+        "reason": "DESIGN.md Glow Means Playing rule: amber halo and LED glow only in playing state, sanctioned by the documented system"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-23T09:45:30.328Z",
+        "reason": "critique Assessment B: .vdeck__screen child is the cover image filling the screen by design (object-fit: cover); HUD text is inset .75rem"
+      },
+      {
+        "rule": "nested-cards",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-23T09:45:30.343Z",
+        "reason": "DESIGN.md Elevation: LCD wells, bezels and readouts are recessed into hardware panels by design (Hardware Budget Rule), not stacked cards"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-23T09:58:58.016Z",
+        "reason": "critique Assessment B: static engine misreads .h2 clamp(1.75rem,4vw,3rem) as 17px; rendered h2 is 28-48px and URL scans never flag it"
+      },
+      {
+        "rule": "repeating-stripes-gradient",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-23T10:00:13.283Z",
+        "reason": "critique Assessment B: the only repeating gradient is .platter's concentric vinyl grooves, not decorative stripes"
+      }
+    ]
+  }
+}

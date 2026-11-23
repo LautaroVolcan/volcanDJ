@@ -1,0 +1,493 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-23T13:02:40+00:00",
+  "title": "Design System: Lautaro Volcan",
+  "extensions": {
+    "colorMeta": {
+      "oxblood": {
+        "role": "neutral",
+        "displayName": "Oxblood",
+        "canonical": "#1C0A0C",
+        "oklch": "oklch(17.4% 0.032 13.9)",
+        "tonalRamp": [
+          "#0F0A0A",
+          "#2D2223",
+          "#4E3D3E",
+          "#725A5C",
+          "#947B7D",
+          "#B49FA0",
+          "#D4C5C6",
+          "#F5ECEC"
+        ]
+      },
+      "wine": {
+        "role": "neutral",
+        "displayName": "Wine",
+        "canonical": "#36121A",
+        "oklch": "oklch(24.2% 0.058 8.7)",
+        "tonalRamp": [
+          "#12080A",
+          "#321F22",
+          "#57383D",
+          "#7E545A",
+          "#A1747B",
+          "#BF9A9F",
+          "#DCC1C5",
+          "#FAEAEC"
+        ]
+      },
+      "wine-2": {
+        "role": "neutral",
+        "displayName": "Deep Wine",
+        "canonical": "#4A1A22",
+        "oklch": "oklch(29.4% 0.073 12.6)",
+        "tonalRamp": [
+          "#130709",
+          "#351D20",
+          "#5C353A",
+          "#855056",
+          "#A97076",
+          "#C5979B",
+          "#E1BFC2",
+          "#FDE9EA"
+        ]
+      },
+      "lcd-well": {
+        "role": "neutral",
+        "displayName": "LCD Well",
+        "canonical": "#120506",
+        "oklch": "oklch(13.9% 0.026 14.6)",
+        "tonalRamp": [
+          "#0E0A0A",
+          "#2B2223",
+          "#4C3E3F",
+          "#6F5C5D",
+          "#917C7D",
+          "#B1A0A1",
+          "#D2C6C6",
+          "#F4ECED"
+        ]
+      },
+      "volcan": {
+        "role": "primary",
+        "displayName": "Volcan Red",
+        "canonical": "#B23730",
+        "oklch": "oklch(51.8% 0.160 27.4)",
+        "tonalRamp": [
+          "#1B0302",
+          "#460E0C",
+          "#751E1A",
+          "#A9302A",
+          "#D0554B",
+          "#E7867B",
+          "#FCB4AB",
+          "#FFE3DD"
+        ]
+      },
+      "volcan-hot": {
+        "role": "primary",
+        "displayName": "Volcan Hot",
+        "canonical": "#C9433B",
+        "oklch": "oklch(57.1% 0.171 27.3)",
+        "tonalRamp": [
+          "#1C0202",
+          "#480B09",
+          "#781917",
+          "#AD2925",
+          "#D55047",
+          "#EB8378",
+          "#FFB3A9",
+          "#FFE2DC"
+        ]
+      },
+      "amber": {
+        "role": "secondary",
+        "displayName": "Lamp Amber",
+        "canonical": "#F0A04B",
+        "oklch": "oklch(77.0% 0.138 64.7)",
+        "tonalRamp": [
+          "#170700",
+          "#3C1B00",
+          "#663300",
+          "#944C00",
+          "#B96E04",
+          "#D2975C",
+          "#EBC098",
+          "#FFE9D2"
+        ]
+      },
+      "lava": {
+        "role": "tertiary",
+        "displayName": "Lava Glow",
+        "canonical": "#7BE0C3",
+        "oklch": "oklch(83.7% 0.104 173.0)",
+        "tonalRamp": [
+          "#000F0A",
+          "#002D22",
+          "#004F3E",
+          "#00745B",
+          "#2C967C",
+          "#6EB6A0",
+          "#A5D5C6",
+          "#DAF6EC"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Warm Bone",
+        "canonical": "#F3DDD4",
+        "oklch": "oklch(91.3% 0.027 43.6)",
+        "tonalRamp": [
+          "#0E0A08",
+          "#2B231F",
+          "#4C3F39",
+          "#6F5D55",
+          "#917E76",
+          "#B1A19B",
+          "#D2C6C2",
+          "#F4EDEA"
+        ]
+      },
+      "text-soft": {
+        "role": "neutral",
+        "displayName": "Soft Bone",
+        "canonical": "#E6CBC1",
+        "oklch": "oklch(86.2% 0.034 41.4)",
+        "tonalRamp": [
+          "#0F0A08",
+          "#2D221E",
+          "#4E3E38",
+          "#725B53",
+          "#947C73",
+          "#B4A099",
+          "#D4C6C0",
+          "#F5ECE9"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Dusty Rose",
+        "canonical": "#C7A49A",
+        "oklch": "oklch(74.7% 0.044 36.5)",
+        "tonalRamp": [
+          "#100907",
+          "#2F211D",
+          "#523C36",
+          "#785950",
+          "#9A7A70",
+          "#B99E97",
+          "#D8C4BF",
+          "#F7ECE8"
+        ]
+      },
+      "fader-cap": {
+        "role": "neutral",
+        "displayName": "Fader Bone",
+        "canonical": "#E9D6CE",
+        "oklch": "oklch(88.9% 0.024 44.3)",
+        "tonalRamp": [
+          "#0E0A09",
+          "#2B2320",
+          "#4B3F3A",
+          "#6D5D56",
+          "#8F7E77",
+          "#AFA29C",
+          "#D1C7C3",
+          "#F3EDEB"
+        ]
+      },
+      "sink": {
+        "role": "neutral",
+        "displayName": "Sink",
+        "canonical": "rgba(0, 0, 0, .25)",
+        "tonalRamp": [
+          "rgba(0, 0, 0, .08)",
+          "rgba(0, 0, 0, .15)",
+          "rgba(0, 0, 0, .25)",
+          "rgba(0, 0, 0, .35)",
+          "rgba(0, 0, 0, .45)",
+          "rgba(0, 0, 0, .55)",
+          "rgba(0, 0, 0, .70)",
+          "rgba(0, 0, 0, .85)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(243, 221, 212, .16)",
+        "tonalRamp": [
+          "rgba(243, 221, 212, .06)",
+          "rgba(243, 221, 212, .10)",
+          "rgba(243, 221, 212, .16)",
+          "rgba(243, 221, 212, .22)",
+          "rgba(243, 221, 212, .30)",
+          "rgba(243, 221, 212, .45)",
+          "rgba(243, 221, 212, .60)",
+          "rgba(243, 221, 212, .80)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The hero name only, uppercase, two lines."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Crate items, video deck titles, header mark."
+      },
+      "statement": {
+        "displayName": "Statement",
+        "purpose": "First-person headings (About) and, scaled up, the booking email."
+      },
+      "readout": {
+        "displayName": "Readout",
+        "purpose": "LCD clocks and times, always tabular."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Language toggle and small UI labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "panel",
+        "value": "inset 0 1px 0 rgba(255,255,255,.07), 0 30px 60px -30px rgba(0,0,0,.7)",
+        "purpose": "Raised wine panels: deck, video decks, mixer, video dialog."
+      },
+      {
+        "name": "well",
+        "value": "inset 0 2px 12px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.05)",
+        "purpose": "Recessed LCD and time readouts."
+      },
+      {
+        "name": "bezel",
+        "value": "0 0 0 5px #120506, 0 0 0 6px rgba(255,255,255,.06)",
+        "purpose": "Video screens."
+      },
+      {
+        "name": "live-halo",
+        "value": "0 0 0 4px rgba(240,160,75,.18), 0 0 24px rgba(240,160,75,.35)",
+        "purpose": "Play button while its media plays."
+      },
+      {
+        "name": "cap",
+        "value": "0 2px 6px rgba(0,0,0,.6)",
+        "purpose": "Fader caps."
+      },
+      {
+        "name": "led-live",
+        "value": "0 0 10px #7BE0C3",
+        "purpose": "Playing LED glow."
+      }
+    ],
+    "gradients": [
+      {
+        "name": "panel",
+        "value": "linear-gradient(160deg, #4A1A22, #36121A 45%, #2A0E13)",
+        "purpose": "Every hardware panel surface."
+      },
+      {
+        "name": "hero-fade",
+        "value": "linear-gradient(to top, #1C0A0C 0%, rgba(28,10,12,.75) 30%, rgba(28,10,12,.1) 65%, rgba(28,10,12,.45) 100%)",
+        "purpose": "Photography falling into the page."
+      },
+      {
+        "name": "fader-cap",
+        "value": "linear-gradient(180deg, #E9D6CE 0 45%, #2A0E13 45% 55%, #E9D6CE 55%)",
+        "purpose": "Fader caps with center line."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state",
+        "value": ".2s ease",
+        "purpose": "Button, toggle and border state changes."
+      },
+      {
+        "name": "ease-out-soft",
+        "value": "cubic-bezier(.2,.7,.1,1)",
+        "purpose": "Dialog entrance (.28s) and video cover zoom (.5s)."
+      },
+      {
+        "name": "ease-fader",
+        "value": "cubic-bezier(.3,.7,.2,1)",
+        "purpose": "Mixer fader and crossfader travel (.45s)."
+      },
+      {
+        "name": "platter-spin",
+        "value": "1.8s linear infinite",
+        "purpose": "33 1/3 rpm, only while playing."
+      },
+      {
+        "name": "led-blink",
+        "value": ".8s steps(2) infinite",
+        "purpose": "Loading LED."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Stops spin and meters, zeroes all transitions."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "stack",
+        "value": "900px"
+      },
+      {
+        "name": "deck-stack",
+        "value": "760px"
+      },
+      {
+        "name": "nav-hide",
+        "value": "600px"
+      },
+      {
+        "name": "phone",
+        "value": "520px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main action: listen, download the press kit. Red ignites to amber on hover.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">Listen to the mixes</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:0 1.4rem;border:1px solid var(--text,#F3DDD4);border-radius:999px;background:transparent;color:var(--text,#F3DDD4);font:600 1rem/1 \"Hanken Grotesk\",system-ui,sans-serif;text-decoration:none;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}.ds-btn-primary{background:var(--volcan,#B23730);border-color:var(--volcan,#B23730)}.ds-btn-primary:hover{background:var(--amber,#F0A04B);border-color:var(--amber,#F0A04B);color:var(--oxblood,#1C0A0C)}.ds-btn:focus-visible{outline:2px solid var(--amber,#F0A04B);outline-offset:3px}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "The secondary action beside a primary one. Fills bone on hover.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Watch a set</a>",
+      "css": ".ds-btn-ghost{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:0 1.4rem;border:1px solid var(--text,#F3DDD4);border-radius:999px;background:transparent;color:var(--text,#F3DDD4);font:600 1rem/1 \"Hanken Grotesk\",system-ui,sans-serif;text-decoration:none;cursor:pointer;transition:background-color .2s,color .2s}.ds-btn-ghost:hover{background:var(--text,#F3DDD4);color:var(--oxblood,#1C0A0C)}.ds-btn-ghost:focus-visible{outline:2px solid var(--amber,#F0A04B);outline-offset:3px}"
+    },
+    {
+      "name": "Link Chip",
+      "kind": "chip",
+      "refersTo": "link-chip",
+      "description": "Social and outbound links in Booking. Hairline pill, amber border on hover.",
+      "html": "<ul class=\"ds-links\"><li><a href=\"#\">Instagram</a></li><li><a href=\"#\">SoundCloud</a></li><li><a href=\"#\">YouTube</a></li></ul>",
+      "css": ".ds-links{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.75rem}.ds-links a{display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1.2rem;border:1px solid rgba(243,221,212,.16);border-radius:999px;color:#F3DDD4;text-decoration:none;font:600 1rem/1 \"Hanken Grotesk\",system-ui,sans-serif;transition:border-color .2s}.ds-links a:hover{border-color:#F0A04B}.ds-links a:focus-visible{outline:2px solid #F0A04B;outline-offset:3px}"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "lang-toggle-active",
+      "description": "Red dot and Unbounded wordmark, Hanken links and the EN/ES pill toggle.",
+      "html": "<header class=\"ds-top\"><a class=\"ds-mark\" href=\"#\"><span class=\"ds-dot\"></span><span>Lautaro Volcan</span></a><nav class=\"ds-nav\"><a href=\"#\">Mixes</a><a href=\"#\">Videos</a><a href=\"#\">About</a><a href=\"#\">Booking</a><span class=\"ds-lang\"><button aria-pressed=\"true\">EN</button><button aria-pressed=\"false\">ES</button></span></nav></header>",
+      "css": ".ds-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.5rem;background:rgba(28,10,12,.82);color:#F3DDD4}.ds-mark{display:inline-flex;align-items:center;gap:.6rem;color:inherit;text-decoration:none;font:600 .9rem/1 Unbounded,\"Arial Black\",sans-serif}.ds-dot{width:.9rem;height:.9rem;border-radius:50%;background:#B23730}.ds-nav{display:flex;align-items:center;gap:1.5rem;font:500 1rem/1 \"Hanken Grotesk\",system-ui,sans-serif}.ds-nav a{color:inherit;text-decoration:none}.ds-nav a:hover{text-decoration:underline;text-underline-offset:.2em}.ds-lang{display:inline-flex;padding:3px;border-radius:999px;border:1px solid rgba(243,221,212,.16);background:rgba(28,10,12,.45)}.ds-lang button{border:0;background:transparent;color:#C7A49A;cursor:pointer;min-width:2.4rem;min-height:2rem;padding:0 .6rem;border-radius:999px;font:600 .8rem/1 \"Hanken Grotesk\",system-ui,sans-serif;letter-spacing:.02em;transition:background-color .2s,color .2s}.ds-lang button:hover{color:#F3DDD4}.ds-lang button[aria-pressed=\"true\"]{background:#F3DDD4;color:#1C0A0C}.ds-nav a:focus-visible,.ds-lang button:focus-visible,.ds-mark:focus-visible{outline:2px solid #F0A04B;outline-offset:3px}"
+    },
+    {
+      "name": "Transport",
+      "kind": "custom",
+      "refersTo": "transport-play",
+      "description": "Round deck controls. The red play button gains the amber live halo while playing.",
+      "html": "<div class=\"ds-transport\"><button class=\"ds-ctl\" aria-label=\"Previous\"><svg viewBox=\"0 0 24 24\"><path d=\"M6 5h2v14H6zM20 5v14L9 12z\"/></svg></button><button class=\"ds-ctl ds-ctl-play is-playing\" aria-label=\"Pause\"><svg viewBox=\"0 0 24 24\"><path d=\"M6 4h4v16H6zM14 4h4v16h-4z\"/></svg></button><button class=\"ds-ctl\" aria-label=\"Next\"><svg viewBox=\"0 0 24 24\"><path d=\"M16 5h2v14h-2zM4 5v14l11-7z\"/></svg></button></div>",
+      "css": ".ds-transport{display:flex;align-items:center;gap:.75rem;padding:1.5rem;background:linear-gradient(160deg,#4A1A22,#36121A 45%,#2A0E13);border-radius:1.5rem}.ds-ctl{display:grid;place-items:center;width:3rem;height:3rem;border-radius:50%;border:1px solid rgba(243,221,212,.16);background:rgba(0,0,0,.25);color:#F3DDD4;cursor:pointer;transition:background-color .2s,border-color .2s}.ds-ctl:hover{border-color:#F3DDD4}.ds-ctl svg{width:1.15rem;height:1.15rem;fill:currentColor}.ds-ctl-play{width:4rem;height:4rem;background:#B23730;border-color:#B23730}.ds-ctl-play:hover{background:#C9433B;border-color:#C9433B}.ds-ctl-play svg{width:1.5rem;height:1.5rem}.ds-ctl-play.is-playing{box-shadow:0 0 0 4px rgba(240,160,75,.18),0 0 24px rgba(240,160,75,.35)}.ds-ctl:focus-visible{outline:2px solid #F0A04B;outline-offset:3px}"
+    },
+    {
+      "name": "LCD Readout",
+      "kind": "custom",
+      "refersTo": "lcd",
+      "description": "Recessed well with status LED, mix title and amber tabular clock.",
+      "html": "<div class=\"ds-lcd\"><div class=\"ds-lcd-top\"><span class=\"ds-led\"></span><span>Playing</span><span class=\"ds-lcd-genre\">Tech house</span></div><p class=\"ds-lcd-title\">Tech House #1</p><p class=\"ds-lcd-time\"><span>Elapsed</span><b>0:12:48</b></p></div>",
+      "css": ".ds-lcd{padding:1rem 1.25rem 1.1rem;border-radius:.9rem;background:linear-gradient(180deg,#120506,#1A0809);box-shadow:inset 0 2px 12px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.05);font-family:\"Helvetica Neue\",Helvetica,Heros,Arial,sans-serif;color:#F0A04B;font-variant-numeric:tabular-nums;max-width:28rem}.ds-lcd-top{display:flex;align-items:center;gap:.55rem;font-size:.85rem;font-weight:500}.ds-lcd-genre{margin-left:auto;color:#C7A49A}.ds-led{width:.6rem;height:.6rem;border-radius:50%;background:#7BE0C3;box-shadow:0 0 10px #7BE0C3}.ds-lcd-title{margin:.5rem 0 .6rem;font-size:2rem;line-height:1.1;font-weight:700;letter-spacing:-.025em;color:#F3DDD4}.ds-lcd-time{margin:0;display:flex;align-items:baseline;gap:.75rem}.ds-lcd-time span{font-size:.8rem;font-weight:500;color:#C7A49A;min-width:7em}.ds-lcd-time b{font-size:2.2rem;letter-spacing:-.02em}"
+    },
+    {
+      "name": "Crate Row",
+      "kind": "custom",
+      "refersTo": "crate-item-current",
+      "description": "Track list rows between hairlines. The current row gets wine fill, a red rail and an amber title.",
+      "html": "<ol class=\"ds-crate\"><li><button aria-current=\"true\"><span class=\"t\">Tech House #1</span><span class=\"g\">Tech house</span><span class=\"d\">32:39</span></button></li><li><button><span class=\"t\">Melodic House #1</span><span class=\"g\">Melodic house</span><span class=\"d\">35:35</span></button></li></ol>",
+      "css": ".ds-crate{list-style:none;margin:0;padding:0;border-top:1px solid rgba(243,221,212,.16);color:#F3DDD4}.ds-crate li{border-bottom:1px solid rgba(243,221,212,.16)}.ds-crate button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:1fr 10rem 5rem;align-items:center;gap:1rem;width:100%;padding:1.1rem .75rem;transition:background-color .15s}.ds-crate button:hover{background:rgba(54,18,26,.7)}.ds-crate button:focus-visible{outline:2px solid #F0A04B;outline-offset:-2px}.ds-crate .t{font:600 1.25rem/1.2 Unbounded,\"Arial Black\",sans-serif;letter-spacing:-.01em}.ds-crate .g{color:#C7A49A;font-family:\"Hanken Grotesk\",system-ui,sans-serif}.ds-crate .d{text-align:right;font-variant-numeric:tabular-nums;color:#C7A49A;font-family:\"Hanken Grotesk\",system-ui,sans-serif}.ds-crate button[aria-current=\"true\"]{background:#36121A;box-shadow:inset 3px 0 0 #B23730}.ds-crate button[aria-current=\"true\"] .t{color:#F0A04B}"
+    },
+    {
+      "name": "Volume Fader",
+      "kind": "input",
+      "refersTo": "lcd",
+      "description": "Range input as a mixer fader: amber-filled 4px track and a bone cap with a dark center line.",
+      "html": "<label class=\"ds-fader\"><input type=\"range\" min=\"0\" max=\"100\" value=\"80\" aria-label=\"Volume\"></label>",
+      "css": ".ds-fader input{-webkit-appearance:none;appearance:none;width:7.5rem;height:2.5rem;background:transparent;cursor:pointer}.ds-fader input::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:linear-gradient(90deg,#F0A04B 80%,rgba(243,221,212,.15) 80%)}.ds-fader input::-moz-range-track{height:4px;border-radius:2px;background:rgba(243,221,212,.15)}.ds-fader input::-moz-range-progress{height:4px;border-radius:2px;background:#F0A04B}.ds-fader input::-webkit-slider-thumb{-webkit-appearance:none;width:1.1rem;height:1.6rem;margin-top:calc(-.8rem + 2px);border-radius:3px;background:linear-gradient(180deg,#E9D6CE 0 45%,#2A0E13 45% 55%,#E9D6CE 55%);box-shadow:0 2px 6px rgba(0,0,0,.6)}.ds-fader input::-moz-range-thumb{width:1.1rem;height:1.6rem;border:0;border-radius:3px;background:linear-gradient(180deg,#E9D6CE 0 45%,#2A0E13 45% 55%,#E9D6CE 55%)}.ds-fader input:focus-visible{outline:2px solid #F0A04B;outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Home Booth",
+    "overview": "This is the room in the hero photo after dark: decks within reach, a lava lamp glowing, red and amber light on the walls. The page is that room. Oxblood is the wall with the lights off, amber is the lamp and the LCD, and the single brand red marks the one thing to press. Nothing is lit unless it has a reason to be: a readout, a playing state, the next action.\n\nThe system is **warm and restrained**. Everyday chrome is quiet: pill buttons, thin warm hairlines, muted secondary text. Hardware detail is spent in one place, on the players. The music deck (platter, LCD well, waveform, fader) and the two video decks with their mixer are where the interface becomes equipment. Everything else steps back so the photography and the deck carry the identity.\n\nType does the shouting. A huge, tight, uppercase Unbounded wordmark anchors the hero. A warm humanist grotesk carries the reading, and a Helvetica voice handles readouts and first-person statements. Real photographs of Lautaro in his own light are the only imagery.\n\nExplicitly rejected: the neon club-flyer look (saturated purple/cyan gradients, lasers, glitch type), raw stock SoundCloud/YouTube embeds in place of the custom players, any light theme, and flat SaaS card grids.",
+    "keyCharacteristics": [
+      "Dark-only, warm-tinted palette. No neutral greys, and no pure black except inside the video screen.",
+      "One red for action, amber for light and information, lava green only for \"live\".",
+      "Unbounded at poster scale for the name and section heads, Hanken Grotesk for reading, Helvetica for readouts and statements.",
+      "Hardware-grade detail on the players only. Everywhere else, pills and hairlines.",
+      "Real photography with an oxblood gradient falling into the page."
+    ],
+    "rules": [
+      {
+        "name": "The One Red Rule",
+        "body": "Volcan Red marks only the action you're meant to take (play, download, listen) or the identity dot. Never use it for decoration, section backgrounds or large fills.",
+        "section": "colors"
+      },
+      {
+        "name": "The Lamp Rule",
+        "body": "Amber means \"this is lit\": live information, focus, or the part of the track already played. If nothing is happening, it isn't amber.",
+        "section": "colors"
+      },
+      {
+        "name": "The Lava-Is-Live Rule",
+        "body": "Lava green appears only where a signal is present: the playing LED and the meters. Anything else in green is a bug.",
+        "section": "colors"
+      },
+      {
+        "name": "The Three Voices Rule",
+        "body": "Unbounded names things (the artist, sections, mixes). Hanken reads, and Helvetica measures and speaks in first person. Don't put body copy in Unbounded or headings in Hanken.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Clock Rule",
+        "body": "Every time, duration and counter uses tabular numerals so it doesn't jitter while playing.",
+        "section": "typography"
+      },
+      {
+        "name": "The Glow Means Playing Rule",
+        "body": "Halos, LED glow and meter glow appear only while media plays or loads. At rest, nothing glows.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Hardware Budget Rule",
+        "body": "Panel gradients, wells and bezels belong to the players. Content sections such as About and Booking stay flat on oxblood.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep every surface on the oxblood/wine family and every neutral warm-tinted.",
+      "Do limit Volcan Red to the action, the identity dot and the current-item marker (The One Red Rule).",
+      "Do use amber for anything lit or informational, and lava only for live signal.",
+      "Do build media into the deck and video-deck language: LCD wells, waveform scrubbers, round transport buttons with the live halo.",
+      "Do use only real photographs of Lautaro, fading into oxblood with a bottom-up gradient.",
+      "Do keep times in tabular Helvetica readouts.",
+      "Do honor `prefers-reduced-motion`: no platter spin, no meter animation, no transitions.",
+      "Do keep the 2px amber focus ring visible on every interactive element, including custom ones like the waveform and crate rows."
+    ],
+    "donts": [
+      "Don't use the neon club-flyer look: purple/cyan gradients, laser beams, glitch or chrome type.",
+      "Don't drop raw SoundCloud or YouTube embeds onto the page in place of the custom players.",
+      "Don't introduce a light theme or light sections.",
+      "Don't use flat SaaS cards, icon-feature grids or gradient CTA banners.",
+      "Don't spread hardware detail (panel gradients, wells, bezels, glow) to content sections. Keep About and Booking flat (The Hardware Budget Rule).",
+      "Don't let anything glow at rest (The Glow Means Playing Rule).",
+      "Don't set body copy in Unbounded or use more than these three typefaces."
+    ]
+  }
+}

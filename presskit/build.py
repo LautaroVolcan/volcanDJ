@@ -20,17 +20,17 @@ T = {
         "lang": "en",
         "kicker": "Press kit",
         "role": "DJ based in Barcelona",
-        "genres": ["Tech house", "House", "Techno", "Nu disco", "Ambient"],
+        "genres": ["Tech house", "Melodic house", "Deep house"],
         "about": "About",
         "short_label": "Short bio for listings and flyers",
         "short": "Lautaro Volcan is the DJ project of Lautaro Ferrandi, an Argentine-Spanish DJ based in Barcelona. "
-                 "His sets move through tech house, house, techno and nu disco, with ambient passages that give the room space to breathe.",
+                 "His sets move through tech house, melodic house and deep house, and are heading further into techno, nu disco and ambient.",
         "long_label": "In his words",
         "long": [
-            "I'm drawn to tech house, house, techno, nu disco and ambient, and I focus on building atmospheres that connect with the room. "
+            "My sets live in tech house, melodic house and deep house, and I focus on building atmospheres that connect with the room. "
             "I pick tracks for their groove, their vocals and their rhythmic patterns, and dig into what makes each one work to build sets people share together.",
-            "I like sets that move across styles. I've played clubs and events in different countries, reading each crowd and each venue as it comes.",
-            "Ambient is where the introspective side comes in: it lets me fold quieter, emotional passages into a mix without losing the floor.",
+            "I like sets that move across styles, and I'm taking mine further into techno, nu disco and ambient. I've played clubs and events in different countries, reading each crowd and each venue as it comes.",
+            "Ambient is where the introspective side comes in: it's how I want to fold quieter, emotional passages into a mix without losing the floor.",
         ],
         "book": "Bookings",
         "book_lede": "For bookings, collaborations and press, write to:",
@@ -43,17 +43,17 @@ T = {
         "lang": "es",
         "kicker": "Press kit",
         "role": "DJ con base en Barcelona",
-        "genres": ["Tech house", "House", "Techno", "Nu disco", "Ambient"],
+        "genres": ["Tech house", "Melodic house", "Deep house"],
         "about": "Sobre mí",
         "short_label": "Bio corta para agendas y flyers",
         "short": "Lautaro Volcan es el proyecto como DJ de Lautaro Ferrandi, DJ argentino-español con base en Barcelona. "
-                 "Sus sets recorren el tech house, el house, el techno y el nu disco, con pasajes de ambient que le dan aire a la pista.",
+                 "Sus sets recorren el tech house, el melodic house y el deep house, y van rumbo al techno, el nu disco y el ambient.",
         "long_label": "En primera persona",
         "long": [
-            "Me apasionan el tech house, el house, el techno, el nu disco y el ambient, y me dedico a crear atmósferas que conecten con el público. "
+            "Mis sets se mueven entre el tech house, el melodic house y el deep house, y me dedico a crear atmósferas que conecten con el público. "
             "Elijo los tracks por su groove, sus voces y sus patrones rítmicos, y busco qué hace funcionar a cada uno para construir sets que se disfruten en conjunto.",
-            "Me gustan los sets que cruzan estilos. He tocado en clubes y eventos de distintos países, leyendo cada público y cada espacio.",
-            "El ambient es mi lado más introspectivo: me permite sumar pasajes más tranquilos y emotivos a una mezcla sin perder la pista.",
+            "Me gustan los sets que cruzan estilos, y estoy llevando los míos hacia el techno, el nu disco y el ambient. He tocado en clubes y eventos de distintos países, leyendo cada público y cada espacio.",
+            "El ambient es mi lado más introspectivo: es la forma en que quiero sumar pasajes más tranquilos y emotivos a una mezcla sin perder la pista.",
         ],
         "book": "Contrataciones",
         "book_lede": "Para contrataciones, colaboraciones y prensa, escríbeme a:",
