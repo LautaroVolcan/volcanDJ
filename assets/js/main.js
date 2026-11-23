@@ -16,12 +16,13 @@
   const I18N = {
     en: {
       title: "Lautaro Volcan — DJ",
-      description: "Lautaro Volcan is an Argentine-Spanish DJ based in Barcelona playing tech house, house, techno, nu disco and ambient. Listen to his mixes and get in touch for bookings.",
+      description: "Lautaro Volcan is an Argentine-Spanish DJ based in Barcelona playing tech house, melodic house and deep house. Listen to his mixes and get in touch for bookings.",
       skip: "Skip to the mixes",
       backTop: "Lautaro Volcan, back to top",
       navLabel: "Main",
       navMixes: "Mixes", navVideos: "Videos", navAbout: "About", navBooking: "Booking",
       langLabel: "Language",
+      role: "DJ based in Barcelona",
       heroAlt: "Lautaro behind the decks at home, lit in red and amber, with a lava lamp glowing beside him",
       lede: "I shape minimal beats, deep grooves and dark ambiances into immersive sonic journeys.",
       ctaListen: "Listen to the mixes",
@@ -31,17 +32,20 @@
       wavePos: "Position in the mix",
       prev: "Previous mix", next: "Next mix", volume: "Volume",
       openSc: "Open on SoundCloud",
+      nowPlaying: "Now playing", toDeck: "Go to the deck",
       fallback: "Your browser blocked playback from the custom player. Use the SoundCloud player below instead.",
       credit: "Audio streamed from",
       videosIntro: "Two sets on camera. Press play on a deck to watch it.",
       watchYt: "Watch on YouTube",
       aboutAlt: "Portrait of Lautaro in a black turtleneck against a deep teal background, with an orange four-pointed star of light over one eye",
       aboutTitle: "I'm Lautaro Ferrandi, and I play as Lautaro Volcan: an Argentine-Spanish DJ based in Barcelona.",
-      about1: "I'm drawn to tech house, house, techno, nu disco and ambient, and I focus on building atmospheres that connect with the room. I pick tracks for their groove, their vocals and their rhythmic patterns, and dig into what makes each one work to build sets people share together.",
-      about2: "I like sets that move across styles. I've played clubs and events in different countries, reading each crowd and each venue as it comes.",
-      about3: "Ambient is where the introspective side comes in: it lets me fold quieter, emotional passages into a mix without losing the floor.",
+      about1: "My sets live in tech house, melodic house and deep house, and I focus on building atmospheres that connect with the room. I pick tracks for their groove, their vocals and their rhythmic patterns, and dig into what makes each one work to build sets people share together.",
+      about2: "I like sets that move across styles, and I'm taking mine further into techno, nu disco and ambient. I've played clubs and events in different countries, reading each crowd and each venue as it comes.",
+      about3: "Ambient is where the introspective side comes in: it's how I want to fold quieter, emotional passages into a mix without losing the floor.",
       genres: "Genres",
       bookingTitle: "Bookings, collaborations and press",
+      copyMail: "Copy email", copiedMail: "Copied", selectedMail: "Selected",
+      copiedMailStatus: "Email address copied", selectedMailStatus: "Email address selected",
       pkMain: "Download press kit", pkMainHref: "assets/presskit/LautaroVolcan-PressKit-EN.pdf",
       pkAlt: "Press kit en español", pkAltHref: "assets/presskit/LautaroVolcan-PressKit-ES.pdf", pkAltLang: "es",
       rights: "All rights reserved.",
@@ -52,20 +56,25 @@
       elapsed: "Elapsed", remaining: "Remaining",
       of: (a, b) => `${a} of ${b}`,
       play: "Play", pause: "Pause",
+      annPlaying: (x) => `Playing ${x}`, annPaused: (x) => `${x} paused`, annLoading: (x) => `Loading ${x}`,
+      videoTap: "Tap the video to start it.",
       openTrack: (x) => `Open ${x} on SoundCloud`,
+      scFrame: (x) => `${x} on SoundCloud`,
       playVideo: (x) => `Play ${x}`,
+      watchYtTitle: (x) => `Watch ${x} on YouTube`,
       close: "Close", fullscreen: "Full screen", exitFullscreen: "Exit full screen",
       videoPos: "Position in the video",
       videoError: "This video can't play here.",
     },
     es: {
       title: "Lautaro Volcan — DJ",
-      description: "Lautaro Volcan es un DJ argentino-español con base en Barcelona: tech house, house, techno, nu disco y ambient. Escucha sus mixes y escríbele para contrataciones.",
+      description: "Lautaro Volcan es un DJ argentino-español con base en Barcelona: tech house, melodic house y deep house. Escucha sus mixes y escríbele para contrataciones.",
       skip: "Saltar a los mixes",
       backTop: "Lautaro Volcan, volver arriba",
       navLabel: "Principal",
       navMixes: "Mixes", navVideos: "Videos", navAbout: "Sobre mí", navBooking: "Contacto",
       langLabel: "Idioma",
+      role: "DJ con base en Barcelona",
       heroAlt: "Lautaro en los platos en su casa, con luz roja y ámbar y una lámpara de lava encendida a su lado",
       lede: "Doy forma a beats minimalistas, grooves profundos y atmósferas oscuras para crear viajes sonoros envolventes.",
       ctaListen: "Escuchar los mixes",
@@ -75,17 +84,20 @@
       wavePos: "Posición en el mix",
       prev: "Mix anterior", next: "Mix siguiente", volume: "Volumen",
       openSc: "Abrir en SoundCloud",
+      nowPlaying: "Sonando ahora", toDeck: "Ir al deck",
       fallback: "Tu navegador bloqueó la reproducción desde este reproductor. Usa el reproductor de SoundCloud que aparece debajo.",
       credit: "Audio en streaming desde",
       videosIntro: "Dos sets en cámara. Pulsa play en un deck para verlo.",
       watchYt: "Ver en YouTube",
       aboutAlt: "Retrato de Lautaro con jersey negro de cuello alto sobre un fondo azul petróleo, con una estrella de luz naranja de cuatro puntas sobre un ojo",
       aboutTitle: "Soy Lautaro Ferrandi y toco como Lautaro Volcan: DJ argentino-español con base en Barcelona.",
-      about1: "Me apasionan el tech house, el house, el techno, el nu disco y el ambient, y me dedico a crear atmósferas que conecten con el público. Elijo los tracks por su groove, sus voces y sus patrones rítmicos, y busco qué hace funcionar a cada uno para construir sets que se disfruten en conjunto.",
-      about2: "Me gustan los sets que cruzan estilos. He tocado en clubes y eventos de distintos países, leyendo cada público y cada espacio.",
-      about3: "El ambient es mi lado más introspectivo: me permite sumar pasajes más tranquilos y emotivos a una mezcla sin perder la pista.",
+      about1: "Mis sets se mueven entre el tech house, el melodic house y el deep house, y me dedico a crear atmósferas que conecten con el público. Elijo los tracks por su groove, sus voces y sus patrones rítmicos, y busco qué hace funcionar a cada uno para construir sets que se disfruten en conjunto.",
+      about2: "Me gustan los sets que cruzan estilos, y estoy llevando los míos hacia el techno, el nu disco y el ambient. He tocado en clubes y eventos de distintos países, leyendo cada público y cada espacio.",
+      about3: "El ambient es mi lado más introspectivo: es la forma en que quiero sumar pasajes más tranquilos y emotivos a una mezcla sin perder la pista.",
       genres: "Géneros",
       bookingTitle: "Contrataciones, colaboraciones y prensa",
+      copyMail: "Copiar mail", copiedMail: "Copiado", selectedMail: "Seleccionado",
+      copiedMailStatus: "Dirección de mail copiada", selectedMailStatus: "Dirección de mail seleccionada",
       pkMain: "Descargar press kit", pkMainHref: "assets/presskit/LautaroVolcan-PressKit-ES.pdf",
       pkAlt: "Press kit in English", pkAltHref: "assets/presskit/LautaroVolcan-PressKit-EN.pdf", pkAltLang: "en",
       rights: "Todos los derechos reservados.",
@@ -95,8 +107,12 @@
       elapsed: "Transcurrido", remaining: "Restante",
       of: (a, b) => `${a} de ${b}`,
       play: "Reproducir", pause: "Pausar",
+      annPlaying: (x) => `Sonando ${x}`, annPaused: (x) => `${x} en pausa`, annLoading: (x) => `Cargando ${x}`,
+      videoTap: "Toca el video para empezar.",
       openTrack: (x) => `Abrir ${x} en SoundCloud`,
+      scFrame: (x) => `${x} en SoundCloud`,
       playVideo: (x) => `Reproducir ${x}`,
+      watchYtTitle: (x) => `Ver ${x} en YouTube`,
       close: "Cerrar", fullscreen: "Pantalla completa", exitFullscreen: "Salir de pantalla completa",
       videoPos: "Posición en el video",
       videoError: "Este video no se puede reproducir aquí.",
@@ -134,11 +150,17 @@
 
   $$("[data-lang-set]").forEach((b) => b.addEventListener("click", () => setLang(b.dataset.langSet)));
 
-  // ?lang=es in the link wins, then the visitor's last choice; otherwise English.
+  // ?lang=es in the link wins, then the visitor's last choice, then the first of the
+  // browser's preferred languages that we have; otherwise English.
   const initialLang = (() => {
     const q = new URLSearchParams(location.search).get("lang");
     if (q && I18N[q]) return q;
     try { const saved = localStorage.getItem("lang"); if (saved && I18N[saved]) return saved; } catch (_) {}
+    const prefs = navigator.languages?.length ? navigator.languages : [navigator.language || ""];
+    for (const tag of prefs) {
+      const base = String(tag).toLowerCase().split("-")[0];
+      if (I18N[base]) return base;
+    }
     return "en";
   })();
 
@@ -150,6 +172,44 @@
   const onScroll = () => header.classList.toggle("is-scrolled", scrollY > 40);
   addEventListener("scroll", onScroll, { passive: true });
   onScroll();
+
+  /* ---------------- Copy the booking email ----------------
+     A mailto link is a dead click on a computer with no mail app, so the address can be copied too. */
+  const mail = $("[data-mail]");
+  const copyBtn = $("[data-copy-mail]");
+  if (mail && copyBtn) {
+    const label = $("[data-copy-label]", copyBtn);
+    const status = $("[data-copy-status]");
+    let copyState = "idle";
+    let copyTimer = 0;
+    const renderCopy = () => {
+      label.textContent = tr({ idle: "copyMail", copied: "copiedMail", selected: "selectedMail" }[copyState]);
+      copyBtn.classList.toggle("is-done", copyState !== "idle");
+    };
+    const settle = (next) => {
+      copyState = next;
+      renderCopy();
+      status.textContent = next === "idle" ? "" : tr(next === "copied" ? "copiedMailStatus" : "selectedMailStatus");
+      clearTimeout(copyTimer);
+      if (next !== "idle") copyTimer = setTimeout(() => settle("idle"), 2500);
+    };
+    copyBtn.addEventListener("click", async () => {
+      const address = mail.textContent.trim();
+      try {
+        await navigator.clipboard.writeText(address);
+        settle("copied");
+      } catch (_) {
+        // No clipboard access: select the address so the visitor can copy it themselves.
+        const range = document.createRange();
+        range.selectNodeContents(mail);
+        const sel = getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        settle("selected");
+      }
+    });
+    langListeners.push(renderCopy);
+  }
 
   /* ---------------- Video player ----------------
      Opens over the page. Uses YouTube's IFrame API with YouTube's own controls hidden;
@@ -173,7 +233,10 @@
     vol: $("[data-vp-vol]"),
     fs: $("[data-vp-fs]"),
     msg: $("[data-vp-msg]"),
+    poster: $("[data-vp-poster]"),
   };
+  let vStartTimer = 0;
+  let vMsgKey = "";         // which message is showing: "", "error" or "tap"
   let yt = null;            // YT.Player
   let ytReady = null;       // Promise for the API
   let vDeck = null;         // deck currently open
@@ -204,6 +267,13 @@
   function vSetPlaying(on) {
     vPlaying = on;
     vp.panel.classList.toggle("is-playing", on);
+    if (on) {
+      // First frames are on screen: drop the poster and any "tap to start" hint.
+      clearTimeout(vStartTimer);
+      vp.panel.classList.add("is-started");
+      vp.panel.classList.remove("needs-tap");
+      if (vMsgKey === "tap") vShowMsg("");
+    }
     const label = tr(on ? "pause" : "play");
     vp.play.setAttribute("aria-label", label);
     vp.hit.setAttribute("aria-label", label);
@@ -258,12 +328,26 @@
     vPlaying ? yt.pauseVideo() : yt.playVideo();
   }
 
-  function vShowMsg(on) {
-    vp.msg.hidden = !on;
-    if (on) {
+  function vShowMsg(key) {
+    vMsgKey = key;
+    vp.msg.hidden = !key;
+    if (key === "error") {
       const url = `https://www.youtube.com/watch?v=${vDeck.dataset.videoId}`;
       vp.msg.innerHTML = `${tr("videoError")} <a href="${url}" target="_blank" rel="noopener">${tr("watchYt")}</a>`;
+    } else if (key === "tap") {
+      vp.msg.textContent = tr("videoTap");
     }
+  }
+
+  // Some phones refuse to start a YouTube iframe from our own button. If nothing is playing
+  // a few seconds after opening, step our tap layer aside so the next tap reaches YouTube itself.
+  function vArmStartCheck() {
+    clearTimeout(vStartTimer);
+    vStartTimer = setTimeout(() => {
+      if (vp.panel.classList.contains("is-started") || !vp.dialog.open || vMsgKey === "error") return;
+      vp.panel.classList.add("needs-tap");
+      vShowMsg("tap");
+    }, 3500);
   }
 
   async function openVideo(d) {
@@ -276,13 +360,21 @@
     vPeaks = fakePeaks(parseInt(id.replace(/\D/g, "") || "7", 10) + 13);
     vp.cur.textContent = fmtS(start);
     vp.dur.textContent = "0:00";
-    vShowMsg(false);
+    vShowMsg("");
+    // The deck's thumbnail stands in until YouTube shows its first frame, so the screen is never blank.
+    const thumb = $("[data-yt-thumb]", d);
+    vp.panel.classList.remove("is-started", "needs-tap");
+    if (thumb?.currentSrc) { vp.poster.src = thumb.currentSrc; vp.poster.hidden = false; }
+    else vp.poster.hidden = true;
     vp.dialog.showModal();
+    // showModal() focuses the first button (Close), so Space would close the video; start on play instead.
+    vp.play.focus({ preventScroll: true });
     vDraw(0);
+    vArmStartCheck();
     try {
       await loadYT();
     } catch (_) {
-      vShowMsg(true);
+      vShowMsg("error");
       return;
     }
     if (vDeck !== d) return;
@@ -310,12 +402,13 @@
             yt.pauseVideo();
           }
         },
-        onError: () => vShowMsg(true),
+        onError: () => { clearTimeout(vStartTimer); vShowMsg("error"); },
       },
     });
   }
 
   function closeVideo() {
+    clearTimeout(vStartTimer);
     try { yt?.pauseVideo(); } catch (_) {}
     vSetPlaying(false);
     vdecks.forEach((o) => o.classList.remove("is-live"));
@@ -364,12 +457,24 @@
   new ResizeObserver(() => vRender()).observe(vp.canvas);
 
   langListeners.push(() => {
-    vdecks.forEach((d) => $$("[data-video-play]", d).forEach((b) => b.setAttribute("aria-label", tr("playVideo", d.dataset.videoTitle))));
+    vdecks.forEach((d) => {
+      $$(".vdeck__play", d).forEach((b) => b.setAttribute("aria-label", tr("playVideo", d.dataset.videoTitle)));
+      $(".vdeck__yt", d)?.setAttribute("aria-label", tr("watchYtTitle", d.dataset.videoTitle));
+    });
     const label = tr(vPlaying ? "pause" : "play");
     vp.play.setAttribute("aria-label", label);
     vp.hit.setAttribute("aria-label", label);
-    if (!vp.msg.hidden) vShowMsg(true);
+    if (vMsgKey) vShowMsg(vMsgKey);
   });
+
+  // Fetch YouTube's API before the videos scroll into view, so opening one doesn't wait on it.
+  const vSection = $(".vdecks");
+  if (vSection && "IntersectionObserver" in window) {
+    const vio = new IntersectionObserver((entries) => {
+      if (entries.some((en) => en.isIntersecting)) { loadYT().catch(() => {}); vio.disconnect(); }
+    }, { rootMargin: "600px 0px" });
+    vio.observe(vSection);
+  }
 
   // YouTube serves a tiny grey placeholder when a video has no max-res thumbnail; fall back to the HQ one.
   $$("[data-yt-thumb]").forEach((img) => {
@@ -447,6 +552,10 @@
   let stateKey = "ready";
   let titleKey = "chooseMix"; // used while no track title is shown
   const setState = (key) => { stateKey = key; ui.state.textContent = tr(`st_${key}`); };
+
+  // Screen readers hear state changes the visitor caused, never the ticking clock.
+  const statusEl = $("[data-deck-status]", deck);
+  const announce = (text) => { if (statusEl) statusEl.textContent = text; };
 
   function loadApi() {
     if (window.SC?.Widget) return Promise.resolve();
@@ -559,6 +668,49 @@
     const pct = cur.duration ? Math.round((cur.pos / cur.duration) * 100) : 0;
     ui.wave.setAttribute("aria-valuenow", pct);
     ui.wave.setAttribute("aria-valuetext", tr("of", fmt(cur.pos), fmt(cur.duration)));
+    renderCrate();
+    renderNowbar();
+  }
+
+  // The loaded row shows where you are in it ("12:48 / 32:39") and lights its LED while playing.
+  function renderCrate() {
+    tracks.forEach((t) => {
+      const started = t === cur && (t.pos > 0 || playing);
+      t.btn.classList.toggle("has-pos", started);
+      t.btn.classList.toggle("is-playing", t === cur && playing);
+      if (!t.duration) return;
+      // follows the LCD's elapsed/remaining mode, like the now-playing bar
+      const shown = showRemaining ? `-${fmt(t.duration - t.pos)}` : fmt(t.pos);
+      t.lenEl.textContent = started ? `${shown} / ${fmt(t.duration)}` : fmt(t.duration);
+    });
+  }
+
+  /* ---- now-playing bar: shown once a mix has started, while the transport is out of view ---- */
+
+  const nb = {
+    root: $("[data-nowbar]"),
+    play: $("[data-nb-play]"),
+    jump: $("[data-nb-jump]"),
+    title: $("[data-nb-title]"),
+    time: $("[data-nb-time]"),
+    progress: $("[data-nb-progress]"),
+  };
+  let started = false;        // a mix has played in this visit
+  let transportInView = true;
+  let heroInView = true;      // the bar never sits over the name and the hero actions
+
+  function renderNowbar() {
+    if (!nb.root || !cur) return;
+    const show = started && !transportInView && !heroInView;
+    nb.root.classList.toggle("is-on", show);
+    nb.root.classList.toggle("is-playing", playing);
+    document.body.classList.toggle("has-nowbar", show);
+    nb.play.setAttribute("aria-label", tr(playing ? "pause" : "play"));
+    nb.title.textContent = cur.title;
+    // Same mode as the LCD: elapsed, or remaining with a minus sign.
+    const shown = showRemaining && cur.duration ? `-${fmt(cur.duration - cur.pos)}` : fmt(cur.pos);
+    nb.time.textContent = cur.duration ? `${shown} / ${fmt(cur.duration)}` : shown;
+    nb.progress.style.transform = `scaleX(${cur.duration ? cur.pos / cur.duration : 0})`;
   }
 
   function renderTrack() {
@@ -581,16 +733,21 @@
     drawWave();
   }
 
-  function setPlaying(on) {
+  function setPlaying(on, { quiet = false } = {}) {
+    const was = playing;
     playing = on;
+    if (!quiet && cur && on !== was) announce(tr(on ? "annPlaying" : "annPaused", cur.title));
     deck.classList.toggle("is-playing", on);
     deck.classList.remove("is-loading");
     ui.play.setAttribute("aria-label", tr(on ? "pause" : "play"));
     setState(on ? "playing" : cur?.pos ? "paused" : "ready");
     if (on) {
+      started = true;
       clearTimeout(fallbackTimer);
       ui.fallback.hidden = true;
     }
+    renderCrate();
+    renderNowbar();
   }
 
   function showFallback() {
@@ -611,6 +768,7 @@
         setState("offline");
         titleKey = "unreachable";
         ui.title.textContent = tr(titleKey);
+        if (pendingPlay) announce(tr("unreachable"));
       });
   }
 
@@ -629,7 +787,7 @@
     const iframe = document.createElement("iframe");
     iframe.src = `https://w.soundcloud.com/player/?${params}`;
     iframe.allow = "autoplay";
-    iframe.title = `${t.title} on SoundCloud`;
+    iframe.title = tr("scFrame", t.title);
     iframe.loading = "eager";
     iframe.tabIndex = -1;
     ui.engine.appendChild(iframe);
@@ -675,7 +833,7 @@
     w.bind(E.FINISH, () => {
       if (t !== cur) return;
       t.pos = 0;
-      setPlaying(false);
+      setPlaying(false, { quiet: true });
       const next = tracks[(t.i + 1) % tracks.length];
       if (next !== t) select(next.i, true);
     });
@@ -689,7 +847,7 @@
     if (cur && cur !== t && cur.ready) cur.widget.pause();
     if (cur !== t) {
       cur = t;
-      setPlaying(false);
+      setPlaying(false, { quiet: true });
     }
     renderTrack();
     if (autoplay) play();
@@ -702,6 +860,7 @@
       pendingPlay = cur;
       deck.classList.add("is-loading");
       setState("loading");
+      announce(tr("annLoading", cur.title));
       return;
     }
     cur.widget.play();
@@ -791,6 +950,37 @@
     startEngine();
   }
 
+  // Hero "Listen to the mixes": bring the deck into view and leave focus on play,
+  // so the next tap or Enter starts the mix. Without JS the plain #mixes anchor still works.
+  $("[data-cta-listen]")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    $("#mixes").scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
+    ui.play.focus({ preventScroll: true });
+    history.replaceState(null, "", `${location.pathname}${location.search}#mixes`);
+  });
+
+  if (nb.root) {
+    nb.play.addEventListener("click", () => (playing ? pause() : play()));
+    nb.jump.addEventListener("click", () => {
+      ui.play.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "center" });
+      ui.play.focus({ preventScroll: true });
+    });
+    if ("IntersectionObserver" in window) {
+      // The deck counts as in view only while its play button is fully visible below the fixed
+      // header (~5rem); a button peeking under the header doesn't count. When the readout scrolls
+      // away but play is still in reach, the loaded crate row carries the status instead.
+      new IntersectionObserver((entries) => {
+        transportInView = entries[entries.length - 1].intersectionRatio >= 0.99;
+        renderNowbar();
+      }, { rootMargin: "-80px 0px 0px 0px", threshold: [0, 0.99, 1] }).observe(ui.play);
+      const heroActions = $(".hero__actions");
+      if (heroActions) new IntersectionObserver((entries) => {
+        heroInView = entries[entries.length - 1].isIntersecting;
+        renderNowbar();
+      }).observe(heroActions);
+    }
+  }
+
   if (reducedMotion) ui.platter.style.animation = "none";
 
   // Let the video decks pause the music.
@@ -801,6 +991,10 @@
     setState(stateKey);
     ui.play.setAttribute("aria-label", tr(playing ? "pause" : "play"));
     if (stateKey === "offline") ui.title.textContent = tr(titleKey);
+    $$("iframe", ui.engine).forEach((f) => {
+      const t = tracks.find((x) => x.iframe === f);
+      if (t) f.title = tr("scFrame", t.title);
+    });
     renderTrack();
   });
   select(0, false);

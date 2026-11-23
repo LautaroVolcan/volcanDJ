@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lautaro Volcan — DJ</title>
-  <meta name="description" content="Lautaro Volcan is an Argentine-Spanish DJ based in Barcelona playing tech house, house, techno, nu disco and ambient. Listen to his mixes and get in touch for bookings.">
+  <meta name="description" content="Lautaro Volcan is an Argentine-Spanish DJ based in Barcelona playing tech house, melodic house and deep house. Listen to his mixes and get in touch for bookings.">
   <meta name="author" content="Lautaro Ferrandi">
   <meta name="theme-color" content="#1C0A0C">
 
@@ -64,9 +64,10 @@
           <span>Volcan</span>
         </h1>
         <div class="hero__side">
+          <p class="hero__role" data-i18n="role">DJ based in Barcelona</p>
           <p class="hero__lede" data-i18n="lede">I shape minimal beats, deep grooves and dark ambiances into immersive sonic journeys.</p>
           <div class="hero__actions">
-            <a class="btn btn--solid" href="#mixes" data-i18n="ctaListen">Listen to the mixes</a>
+            <a class="btn btn--solid" href="#mixes" data-i18n="ctaListen" data-cta-listen>Listen to the mixes</a>
             <a class="btn" href="#videos" data-i18n="ctaWatch">Watch a set</a>
           </div>
         </div>
@@ -93,7 +94,8 @@
           </div>
 
           <div class="deck__panel">
-            <div class="lcd" aria-live="polite">
+            <p class="sr" role="status" data-deck-status></p>
+            <div class="lcd">
               <div class="lcd__row lcd__row--top">
                 <span class="led" data-led aria-hidden="true"></span>
                 <span class="lcd__state" data-state>Ready</span>
@@ -146,7 +148,6 @@
                     data-url="https://soundcloud.com/lautarovolcan/tech-house-1"
                     data-genre="Tech house">
               <span class="crate__title">Tech House #1</span>
-              <span class="crate__genre">Tech house</span>
               <span class="crate__len" data-len>—</span>
             </button>
           </li>
@@ -156,7 +157,6 @@
                     data-url="https://soundcloud.com/lautarovolcan/melodic-house-1"
                     data-genre="Melodic house">
               <span class="crate__title">Melodic House #1</span>
-              <span class="crate__genre">Melodic house</span>
               <span class="crate__len" data-len>—</span>
             </button>
           </li>
@@ -166,7 +166,6 @@
                     data-url="https://soundcloud.com/lautarovolcan/deep-house-2"
                     data-genre="Deep house">
               <span class="crate__title">Deep House #2</span>
-              <span class="crate__genre">Deep house</span>
               <span class="crate__len" data-len>—</span>
             </button>
           </li>
@@ -176,7 +175,6 @@
                     data-url="https://soundcloud.com/lautarovolcan/deep-house-session-1"
                     data-genre="Deep house">
               <span class="crate__title">Deep House #1</span>
-              <span class="crate__genre">Deep house</span>
               <span class="crate__len" data-len>—</span>
             </button>
           </li>
@@ -195,24 +193,23 @@
         </div>
 
         <div class="vdecks">
-          <article class="vdeck panel vdeck--1" data-vdeck data-video-id="7vkOglBB7mk" data-video-start="1500" data-video-title="Live session #1">
+          <article class="vdeck panel vdeck--1" data-vdeck data-video-id="7vkOglBB7mk" data-video-start="0" data-video-title="Melodic House Mix Vol.1">
             <div class="vdeck__screen" data-vscreen>
-              <button class="vdeck__cover" type="button" data-video-play aria-label="Play Live session #1">
+              <button class="vdeck__cover" type="button" data-video-play tabindex="-1" aria-hidden="true">
                 <img src="https://i.ytimg.com/vi/7vkOglBB7mk/maxresdefault.jpg" alt="" loading="lazy" data-yt-thumb="7vkOglBB7mk">
                 <span class="vdeck__hud" aria-hidden="true">
                   <span class="vdeck__num">1</span>
-                  <span class="vdeck__name">Live session #1</span>
                 </span>
                 <span class="vdeck__wave" aria-hidden="true"></span>
               </button>
             </div>
             <div class="vdeck__base">
-              <button class="vdeck__play" type="button" data-video-play aria-label="Play Live session #1">
+              <button class="vdeck__play" type="button" data-video-play aria-label="Play Melodic House Mix Vol.1">
                 <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>
               </button>
               <div class="vdeck__meta">
-                <h3 class="vdeck__title">Live session #1</h3>
-                <a class="vdeck__yt" href="https://www.youtube.com/watch?v=7vkOglBB7mk&t=1500s" target="_blank" rel="noopener" data-i18n="watchYt">Watch on YouTube</a>
+                <h3 class="vdeck__title">Melodic House Mix Vol.1</h3>
+                <a class="vdeck__yt" href="https://www.youtube.com/watch?v=7vkOglBB7mk" target="_blank" rel="noopener" data-i18n="watchYt">Watch on YouTube</a>
               </div>
             </div>
           </article>
@@ -229,23 +226,22 @@
             <div class="xfader"><span class="xfader__cap"></span></div>
           </div>
 
-          <article class="vdeck panel vdeck--2" data-vdeck data-video-id="L5LTvuj2zEo" data-video-start="0" data-video-title="Live session #2">
+          <article class="vdeck panel vdeck--2" data-vdeck data-video-id="L5LTvuj2zEo" data-video-start="0" data-video-title="Deep House Mix Vol.1">
             <div class="vdeck__screen" data-vscreen>
-              <button class="vdeck__cover" type="button" data-video-play aria-label="Play Live session #2">
+              <button class="vdeck__cover" type="button" data-video-play tabindex="-1" aria-hidden="true">
                 <img src="https://i.ytimg.com/vi/L5LTvuj2zEo/maxresdefault.jpg" alt="" loading="lazy" data-yt-thumb="L5LTvuj2zEo">
                 <span class="vdeck__hud" aria-hidden="true">
                   <span class="vdeck__num">2</span>
-                  <span class="vdeck__name">Live session #2</span>
                 </span>
                 <span class="vdeck__wave" aria-hidden="true"></span>
               </button>
             </div>
             <div class="vdeck__base">
-              <button class="vdeck__play" type="button" data-video-play aria-label="Play Live session #2">
+              <button class="vdeck__play" type="button" data-video-play aria-label="Play Deep House Mix Vol.1">
                 <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>
               </button>
               <div class="vdeck__meta">
-                <h3 class="vdeck__title">Live session #2</h3>
+                <h3 class="vdeck__title">Deep House Mix Vol.1</h3>
                 <a class="vdeck__yt" href="https://www.youtube.com/watch?v=L5LTvuj2zEo" target="_blank" rel="noopener" data-i18n="watchYt">Watch on YouTube</a>
               </div>
             </div>
@@ -267,11 +263,11 @@
 
         <div class="about__text">
           <h2 id="about-title" class="h2" data-i18n="aboutTitle">I'm Lautaro Ferrandi, and I play as Lautaro Volcan: an Argentine-Spanish DJ based in Barcelona.</h2>
-          <p data-i18n="about1">I'm drawn to tech house, house, techno, nu disco and ambient, and I focus on building atmospheres that connect with the room. I pick tracks for their groove, their vocals and their rhythmic patterns, and dig into what makes each one work to build sets people share together.</p>
-          <p data-i18n="about2">I like sets that move across styles. I've played clubs and events in different countries, reading each crowd and each venue as it comes.</p>
-          <p data-i18n="about3">Ambient is where the introspective side comes in: it lets me fold quieter, emotional passages into a mix without losing the floor.</p>
+          <p data-i18n="about1">My sets live in tech house, melodic house and deep house, and I focus on building atmospheres that connect with the room. I pick tracks for their groove, their vocals and their rhythmic patterns, and dig into what makes each one work to build sets people share together.</p>
+          <p data-i18n="about2">I like sets that move across styles, and I'm taking mine further into techno, nu disco and ambient. I've played clubs and events in different countries, reading each crowd and each venue as it comes.</p>
+          <p data-i18n="about3">Ambient is where the introspective side comes in: it's how I want to fold quieter, emotional passages into a mix without losing the floor.</p>
           <ul class="tags" aria-label="Genres" data-i18n-attr="aria-label:genres">
-            <li>Tech house</li><li>House</li><li>Techno</li><li>Nu disco</li><li>Ambient</li>
+            <li>Tech house</li><li>Melodic house</li><li>Deep house</li>
           </ul>
         </div>
       </div>
@@ -281,7 +277,14 @@
     <section id="booking" class="booking" aria-labelledby="booking-title">
       <div class="wrap">
         <h2 id="booking-title" class="h2" data-i18n="bookingTitle">Bookings, collaborations and press</h2>
-        <a class="booking__mail" href="mailto:lautaroferrandi@gmail.com">lautaroferrandi@gmail.com</a>
+        <div class="booking__contact">
+          <a class="booking__mail" href="mailto:lautaroferrandi@gmail.com" data-mail>lautaroferrandi@gmail.com</a>
+          <button class="booking__copy" type="button" data-copy-mail>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h11a2 2 0 0 1 2 2v11h-2V5H8zM4 7h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2zm0 2v11h11V9z"/></svg>
+            <span data-copy-label>Copy email</span>
+          </button>
+          <span class="sr" role="status" data-copy-status></span>
+        </div>
         <div class="presskit">
           <a class="btn btn--solid" href="assets/presskit/LautaroVolcan-PressKit-EN.pdf" download data-i18n="pkMain" data-i18n-attr="href:pkMainHref">Download press kit</a>
           <a class="btn" href="assets/presskit/LautaroVolcan-PressKit-ES.pdf" download data-i18n="pkAlt" data-i18n-attr="href:pkAltHref;lang:pkAltLang" lang="es">Press kit en español</a>
@@ -304,19 +307,34 @@
   </footer>
 
 
+  <!-- Now playing: a slim deck that follows you once a mix has started and the deck is out of view. -->
+  <div class="nowbar panel" data-nowbar role="region" aria-label="Now playing" data-i18n-attr="aria-label:nowPlaying">
+    <span class="nowbar__progress" aria-hidden="true"><i data-nb-progress></i></span>
+    <button class="ctl ctl--play nowbar__play" type="button" data-nb-play aria-label="Play">
+      <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>
+      <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+    </button>
+    <button class="nowbar__info" type="button" data-nb-jump>
+      <span class="nowbar__top"><span class="led" aria-hidden="true"></span><span class="nowbar__title" data-nb-title></span></span>
+      <span class="nowbar__time" data-nb-time>0:00</span>
+      <span class="sr" data-i18n="toDeck">Go to the deck</span>
+    </button>
+  </div>
+
   <!-- Video player: opens over the page. YouTube runs underneath with its own controls hidden. -->
   <dialog class="vplayer" data-vplayer aria-labelledby="vplayer-title">
     <div class="vplayer__panel panel" data-vp-panel>
       <div class="vplayer__top">
         <p class="vplayer__title" id="vplayer-title">
           <span class="vdeck__num" data-vp-num aria-hidden="true">1</span>
-          <span data-vp-title>Live session #1</span>
+          <span data-vp-title>Melodic House Mix Vol.1</span>
         </p>
         <button class="vplayer__close" type="button" data-vp-close data-i18n="close">Close</button>
       </div>
 
       <div class="vplayer__screen" data-vp-screen>
         <div class="vplayer__frame"><div data-vp-frame></div></div>
+        <img class="vplayer__poster" data-vp-poster alt="" hidden>
         <button class="vplayer__hit" type="button" data-vp-toggle aria-label="Play" tabindex="-1"></button>
         <span class="vplayer__big" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span>
         <p class="vplayer__msg" data-vp-msg hidden></p>

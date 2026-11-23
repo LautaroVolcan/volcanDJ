@@ -22,7 +22,7 @@ presskit/             source of the press kit (template + build script)
 2. In `index.html`, copy one `<li>` inside `<ol class="crate">` and change:
    - `data-track` → the track number
    - `data-url` → the track's SoundCloud link
-   - `data-genre` and the two visible texts (title and genre)
+   - `data-genre` (shown on the deck's LCD) and the visible title
 3. The first item in the list is the one loaded on the deck when the page opens.
 
 Duration, artwork and waveform are read from SoundCloud automatically.
